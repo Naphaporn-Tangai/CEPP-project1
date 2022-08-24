@@ -1,40 +1,23 @@
 const express = require('express')
+const { ApolloServer } = require('apollo-server-express')
+
+const { typeDefs } = require('./typeDefs')
+const { resolvers } = require('./resolvers')
 const app = express()
-const mongoose = require('mongoose')
-const { graphqlHTTP } = require('express-graphql')
-const { buildSchema } = require('graphql')
+module.exports = app
 
 
-mongoose.connect("mongodb+srv://adminProject:adminProject@cluster0.2dnpotc.mongodb.net/?retryWrites=true&w=majority",
-{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(()=> console.log("Mogodb connected"))
-.catch((err)=>console.log('Error',err))
+async function start() {
+    const apolloServer = new ApolloServer({
+        typeDefs,
+        resolvers
+    })
 
-const schema = buildSchema(`
-    type Query {
-    hello: String
-    }
-`)
+    await apolloServer.start()
+    apolloServer.applyMiddleware({app})
 
-const rootValue = {
-    name: () => {
-        return 'root value!'
-    }
+    app.listen(3000, () => {
+        console.log('Server port 3000')
+    })
 }
-
-app.use('/graphql',graphqlHTTP({
-    schema,
-    rootValue,
-    graphiql: true
-}))
-
-app.get('/',( req, res) => {
-    res.send('Hello app.js')
-})
-
-app.listen(3000, () =>{
-    console.log('Server port 3000')
-})
+start();
