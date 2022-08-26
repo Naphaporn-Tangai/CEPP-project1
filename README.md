@@ -22,4 +22,4 @@ expo start --tunnel or expo start
 
 เข้าถึงไฟล์ก่อน  ``` cd filename ```
 
-และออกจากไฟล์ ``` cd ... ```
+และออกจากไฟล์ ``` cd .. ```
