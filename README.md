@@ -18,7 +18,9 @@ expo start --tunnel or expo start
 
 ##  Back end
 
-รัน ``` npm run dev ```
+รัน ``` node app.js ```
+
+[https://www.youtube.com/watch?v=xUQ-hNRHCgs](https://www.youtube.com/watch?v=xUQ-hNRHCgs)
 
 เข้าถึงไฟล์ก่อน  ``` cd filename ```
 
