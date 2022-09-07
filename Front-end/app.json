@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CEPP-project1",
-    "slug": "CEPP-project1",
+    "name": "Front-end",
+    "slug": "Front-end",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
