@@ -16,12 +16,12 @@ const resolvers =
     },
     Mutation: {
         registerUser: async (parent ,args , context , info) =>{
-            const { username , email , password , confirmpassword} = args.user;
+            const { username , email , password , phonenumber} = args.user;
             const user = new User({ 
                 username: username, 
                 email: email.toLowerCase() , 
                 password ,
-                confirmpassword
+                phonenumber ,
             });
             
             // Check and old user exists with email attemping to register
@@ -32,9 +32,7 @@ const resolvers =
             }
             // Encrypt password
             var encryptedPassword = await bcrypt.hash(password, 10)
-            if(password != confirmpassword ){
-                throw new ApolloError("incorrect password")
-            }
+           
             const token = jwt.sign(
                 {  user_id: user._id, email },
                 "UNSAFE_STRING",

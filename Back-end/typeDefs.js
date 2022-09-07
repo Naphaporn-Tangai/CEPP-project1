@@ -4,9 +4,11 @@ const typeDefs = gql`
     type Query {
         getAllPosts: [Post]
         getPost(id: ID): Post
+        
     }
     type Mutation {
-        registerUser(user: RegisterInput): User
+        registerUser( user: RegisterInput): User
+        loginUser( user: LoginInput): User
         createPost( post: PostInput ): Post
         deletePost( id: ID): String
         updatePost( id: ID ,post: PostInput): Post
@@ -16,6 +18,7 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
+        phonenumber: String
         token: String
     }
 
@@ -23,11 +26,11 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
-        confirmpassword: String
+        phonenumber: String
     }
 
     input LoginInput {
-        username: String
+        email: String
         password: String
     }
 
