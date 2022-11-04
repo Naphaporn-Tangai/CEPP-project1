@@ -16,6 +16,8 @@ expo start --tunnel or expo start
 
 ติดตั้ง React Native Expo [https://youtu.be/f6TXEnHT_Mk](https://youtu.be/f6TXEnHT_Mk)
 
+design UI nativebase [https://docs.nativebase.io/?utm_source=HomePage&utm_medium=header&utm_campaign=NativeBase_3](https://docs.nativebase.io)
+
 ##  Back end
 
 รัน ``` node app.js ```
