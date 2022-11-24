@@ -6,7 +6,9 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import Forgot from "./components/Forgot"
 import ResetPass from "./components/ResetPass"
+import HomeCm from './components/HomeCm';
 import ConfirmReset from "./components/ConfirmReset"
+
 import * as Font from 'expo-font';
 
 
@@ -40,7 +42,7 @@ export default class App extends React.Component {
   <NativeBaseProvider>
     <View style={styles.container} >
      
-        <ConfirmReset/>
+        <HomeCm/>
       
     </View>
     </NativeBaseProvider>
