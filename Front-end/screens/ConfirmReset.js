@@ -9,7 +9,7 @@ export default function ConfirmReset() {
   const thirdInput = useRef();
   const fourthInput = useRef();
   return (
-    <Center flex={1} px="3">
+    
       <FormControl style={{ fontFamily: 'Regular' }}>
         <Text color="#35609C" bottom='35 px' fontFamily='Medium' fontSize="4xl" marginTop="150 px"
           style={{ textAlign: 'right' }}>
@@ -72,6 +72,6 @@ export default function ConfirmReset() {
         </Button>
 
       </FormControl>
-    </Center>
+    
   );
 };

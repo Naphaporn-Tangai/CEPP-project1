@@ -4,11 +4,11 @@ const typeDefs = gql`
     type Query {
         getAllPosts: [Post]
         getPost(id: ID): Post
-        
+        user(id: ID): User
     }
     type Mutation {
         registerUser( user: RegisterInput): User
-        loginUser( user: LoginInput): User
+        loginUser (loginInput: LoginInput): User ok, what is user.token?
         createPost( post: PostInput ): Post
         deletePost( id: ID): String
         updatePost( id: ID ,post: PostInput): Post
