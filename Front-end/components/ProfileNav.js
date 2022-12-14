@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Text,
     Avatar,
@@ -7,11 +7,7 @@ import {
     Icon, 
     Spacer, 
 } from "native-base";
-import { Feather, FontAwesome, FontAwesome5, Ionicons } from "@expo/vector-icons";
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-import { Video, Date, COLORS } from "../constants";
-import { PagerView } from 'react-native-pager-view';
-
+import { Feather } from "@expo/vector-icons";
 
 
 export default function HomeCg() {

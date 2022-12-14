@@ -6,19 +6,18 @@ export default function Addlocation() {
   return (
     <>
        <Input 
-       w={{
-        base: "65%",
-        md: "25%"
-      }}
+         w={{
+          base: "80%",
+          md: "40%"
+        }}
        variant="unstyled" 
        placeholder="สถานที่" 
-       size="md" 
        _input={{ color:"#35609C"}} 
        fontFamily='Regular'
        fontSize="md"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<Ionicons name="location-sharp" />} 
-       size="md" ml="2" color={COLORS.primary}  />} />
+       size="md" color={COLORS.primary}  />} />
     </>
   )
 }

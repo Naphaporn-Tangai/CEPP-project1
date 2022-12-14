@@ -1,17 +1,18 @@
 import React, { useRef, useState } from "react";
-import { Input, Text, Center, FormControl, Button, HStack } from "native-base";
+import { Input, Text, Center, FormControl, Button, HStack ,View} from "native-base";
 
 
-export default function ConfirmReset() {
+export default function ConfirmReset({ navigation }) {
   const [otp, setOtp] = useState({ 1: '', 2: '', 3: '', 4: '' });
   const firstInput = useRef();
   const secondInput = useRef();
   const thirdInput = useRef();
   const fourthInput = useRef();
   return (
-    
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+    <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
-        <Text color="#35609C" bottom='35 px' fontFamily='Medium' fontSize="4xl" marginTop="150 px"
+        <Text color="#35609C" bottom='35 px' fontFamily='Medium' fontSize="4xl" marginTop="20 px"
           style={{ textAlign: 'right' }}>
           ยืนยันรหัส
         </Text>
@@ -67,11 +68,14 @@ export default function ConfirmReset() {
           color: "#FFFF", fontFamily: 'Medium', fontSize: "md",
         }} _pressed={{
           bg: "#8AA7CF", _text: { color: "#35609C" }
-        }}>
+        }}
+        onPress={() => navigation.navigate('Login')}
+        >
           ส่ง
         </Button>
 
       </FormControl>
-    
+      </Center>
+    </View>
   );
 };

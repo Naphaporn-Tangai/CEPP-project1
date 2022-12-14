@@ -15,12 +15,13 @@ import { PagerView } from 'react-native-pager-view';
 import { ProfileNav } from "../components"
 
 
-export default function HomeCg() {
+export default function HomeCg({ navigation }) {
 
     return (
-        <Box w="100%" safeAreaTop flex={1}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+        <Center flex={1}>
             <ScrollView showsVerticalScrollIndicator={false} >
-                <VStack >
+                <VStack safeAreaTop>
                 <ProfileNav/>
                     <Box ml="6">
                         <HStack justifyContent="space-between" alignItems="center" marginBottom={3}>
@@ -28,7 +29,7 @@ export default function HomeCg() {
                                 4 ตุลาคม 2565
                             </Text>
                             <Spacer />
-                            <Button onPress={() => console.log("ลงชื่อเข้างาน")}
+                            <Button onPress={() => navigation.navigate('InOutScreen')}
                                 size="sm" px={2} py={1.5} bg="#8AA7CF" _text={{ color: "#35609C", fontFamily: 'Medium' }}
                                 rounded="25"
                                 mr={6}
@@ -136,8 +137,8 @@ export default function HomeCg() {
 
                 </VStack>
             </ScrollView>
-        </Box>
-
+            </Center>
+    </View>
     );
 };
 

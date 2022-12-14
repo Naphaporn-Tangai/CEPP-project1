@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { HStack, Box, VStack, Button  } from "native-base";
+import { HStack, View, VStack, Button , Center ,Box} from "native-base";
 import { Addlocation } from "../components"
 import { AddImage } from "../components"
 
 
-export default function InOutScreen() {  
+export default function InOutScreen({ navigation }) {  
   const [choice, setChoice] = useState('');
   return (
-    <Box w="100%" safeAreaTop flex={1}>
-     
-    <HStack safeAreaTop space={3} alignItems="center" ml={6}  mr={9} mb={3}>
+    
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop>
+    <Center flex={1}>
+    <Box safeAreaTop flex={1} >
+    <HStack space={3}  mx={10} mb={3} >
         <Button 
-        value="1"onPress={() => setChoice(1)} 
+        value="1"
+        onPress={() => setChoice(1)} 
         variant="outline" 
         _text={{color:"#35609C",fontFamily: 'Regular',fontSize:"md"}}
         isPressed={choice === 1}
@@ -22,12 +25,13 @@ export default function InOutScreen() {
            
           }}
         borderColor="#35609C"
-       
+        
         w="50%"
         >
         เข้างาน</Button>
         <Button 
-        value="2"onPress={() => setChoice(2)} 
+        value="2"
+        onPress={() => setChoice(2)} 
         variant="outline" 
         _text={{color:"#35609C",fontFamily: 'Regular',fontSize:"md"}}
         isPressed={choice === 2} 
@@ -43,10 +47,13 @@ export default function InOutScreen() {
         >
         ออกงาน</Button>
     </HStack>
-      <VStack mx={6} mb={3}>
+    
+      <VStack mx={10} mb={3}>
         <Addlocation/>
         <AddImage/>
       </VStack>
-    </Box>
+      </Box>
+      </Center>
+    </View>
   )
 }
