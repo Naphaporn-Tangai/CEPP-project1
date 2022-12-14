@@ -1,13 +1,14 @@
 import React from "react";
-import { Input, Icon, Text, Link, Center, FormControl, Box, Button, HStack, Checkbox } from "native-base";
+import { Input, Icon, Text, View , Center, FormControl, Box, Button, HStack, Checkbox } from "native-base";
 import { MaterialIcons, Feather, FontAwesome } from "@expo/vector-icons";
 
-export default function ResetPass() {
+export default function ResetPass({ navigation }) {
 
   return (
-   <Box>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
-        <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="200 px"
+        <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="20 px"
           style={{ textAlign: 'right', }}>
           รีเซ็ตรหัสผ่าน
         </Text>
@@ -35,12 +36,13 @@ export default function ResetPass() {
           color: "#FFFF", fontFamily: 'Medium' ,fontSize: "md",
         }} _pressed={{
           bg: "#8AA7CF" ,_text: { color: "#35609C" }
-        }}>
+        }}
+        onPress={() => navigation.navigate('ConfirmReset')}
+        >
           ส่ง
         </Button>
-
-
       </FormControl>
-</Box>
+      </Center>
+    </View>
   );
 };

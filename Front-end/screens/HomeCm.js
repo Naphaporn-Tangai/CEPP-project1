@@ -4,11 +4,13 @@ import { Feather } from "@expo/vector-icons";
 import { UserCG, Date } from "../constants";
 import { ProfileNav } from "../components"
 
-export default function HomeCm() {
+export default function HomeCm({ navigation }) {
     return (
-        <Box w="100%" safeAreaTop flex={1}>
+        
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+            <Center flex={1}>
             <ScrollView showsVerticalScrollIndicator={false} >
-                <VStack >
+                <VStack safeAreaTop>
                     <ProfileNav />
                     <Box ml="6">
                         <Text fontSize="15" fontFamily='Medium' color="#000" marginBottom={3} >
@@ -94,7 +96,7 @@ export default function HomeCm() {
                     </Box>
                 </VStack>
             </ScrollView>
-        </Box>
-
+            </Center>
+    </View>
     );
 };

@@ -8,18 +8,17 @@ export default function AddImage() {
     <>
        <Input 
        w={{
-        base: "65%",
-        md: "25%"
+        base: "80%",
+        md: "40%"
       }}
        variant="unstyled" 
        placeholder="เพิ่มรูปภาพ" 
-       size="md" 
        _input={{ color:"#35609C"}} 
        fontFamily='Regular'
        fontSize="md"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<FontAwesome name="camera" />} 
-       size="md" ml="2" color={COLORS.primary}  />} />
+       size="md" color={COLORS.primary}  />} />
     </>
   )
 }

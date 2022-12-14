@@ -1,13 +1,16 @@
 import React from "react";
-import { Input, Icon, Text, Link, Center, FormControl, Box, Button, HStack, Checkbox } from "native-base";
+import { Input, Icon, Text, Link, Center, FormControl, Box, Button, HStack, Checkbox, View } from "native-base";
 import { MaterialIcons, Feather, FontAwesome } from "@expo/vector-icons";
 
 export default function Login({ navigation }) {
   const [show, setShow] = React.useState(false);
   return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'  }}>
+      <Center flex={1}>
+
     
       <FormControl >
-        <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="200 px"
+        <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="150 px"
           style={{ textAlign: 'right', }}>
           ลงชื่่อเข้าใช้
         </Text>
@@ -33,8 +36,9 @@ export default function Login({ navigation }) {
             fontSize: "sm",
             color: "#8AA7CF",
             marginTop: "20 px",
-            marginBottom: "40 px"
-          }} href="#" isUnderlined _hover={{
+            marginBottom: "40 px",
+            fontFamily: 'Regular'
+          }} onPress={() => navigation.navigate('Forgot')} isUnderlined _hover={{
             _text: { color: "#35609C" }
           }}>
             ลืมรหัสผ่าน?
@@ -44,7 +48,9 @@ export default function Login({ navigation }) {
           color: "#FFFF", fontFamily: 'Medium' ,fontSize: "md",
         }} _pressed={{
           bg: "#8AA7CF" ,_text: { color: "#35609C" }
-        }}>
+        }}
+        onPress={() => navigation.navigate('CmCgScreen')}
+        >
           เข้าสู่ระบบ
         </Button>
 
@@ -56,7 +62,7 @@ export default function Login({ navigation }) {
 
         <Box justifyContent="flex-end" alignItems="flex-start" >
 
-          <HStack mt="6" marginTop="150 px">
+          <HStack mt="6" marginTop="100 px">
 
             <Text fontSize="sm" fontFamily='Regular' color="#000">
               ยังไม่มีบัญชี
@@ -66,14 +72,14 @@ export default function Login({ navigation }) {
               fontSize: "sm",
               fontFamily: 'Regular',
               marginLeft: '6 px'
-            }} href="#">
+            }} onPress={() => navigation.navigate('Register')}>
               ลงทะเบียน
             </Link>
           </HStack>
 
         </Box>
       </FormControl>
-
-   
+    </Center>
+    </View>
   );
 };

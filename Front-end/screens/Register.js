@@ -1,12 +1,13 @@
 import React from "react";
-import { Input, Icon, Text, Link, Center, FormControl, Box, Button, HStack, VStack } from "native-base";
+import { Input, Icon, Text, Link, Center, FormControl, Box, Button, HStack, View  } from "native-base";
 import { MaterialIcons , Feather , FontAwesome ,FontAwesome5 } from "@expo/vector-icons";
 
 
-export default function Register() {
+export default function Register({ navigation }) {
   const [show, setShow] = React.useState(false);
   return (
-   
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
         <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="150 px"
           style={{ textAlign: 'left', }}>
@@ -47,7 +48,9 @@ export default function Register() {
           color: "#FFFF", fontFamily: 'Medium' ,fontSize: "md",
         }} _pressed={{
           bg: "#8AA7CF" ,_text: { color: "#35609C" }
-        }}>
+        }}
+        onPress={() => navigation.navigate('CmCgScreen')}
+        >
           ลงทะเบียน
         </Button>
         <Box alignItems="flex-end" >
@@ -62,13 +65,14 @@ export default function Register() {
               fontSize: "sm",
               fontFamily: 'Regular',
               marginLeft: '6 px'
-            }} href="#">
+            }} onPress={() => navigation.navigate('Login')}>
               ลงชื่อเข้าใช้
             </Link>
           </HStack>
 
         </Box>
       </FormControl>
-
+      </Center>
+    </View>       
   );
 };

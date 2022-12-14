@@ -1,21 +1,22 @@
 import React from 'react';
-import {  Box, VStack, Button ,Image} from "native-base";
+import { View , VStack, Button , Image , Center} from "native-base";
 
 
 import { COLORS } from '../constants';
 
-export default function CmCgScreen() {
+export default function CmCgScreen({ navigation }) {
   return (
-    <Box w="100%" safeAreaTop flex={1} justifyContent='center'>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+    <Center flex={1} >
         <Image
         source={require("../assets/icon.png")}
         size="2xl"
         marginLeft={6}
         />
-      <VStack safeAreaTop space={3} alignItems="center" ml={6}  mr={9} mb={3}>
+      <VStack safeAreaTop space={3} alignItems="center" mb={3}>
         <Button 
         _text={{color:"#fff",fontFamily: 'Regular',fontSize:"md"}}
-        w="100%"
+        px={90}
         bg={COLORS.primary}
         rounded="25"
         _pressed={{ 
@@ -23,22 +24,25 @@ export default function CmCgScreen() {
             color: "#35609C" ,
              },bg:"#8AA7CF",
          }}
+         onPress={() => navigation.navigate('BottomTapCG')}
         >
         Care give</Button>
         <Button 
         variant="ghost"
         _text={{color:"#8AA7CF",fontFamily: 'Regular',fontSize:"md"}}
         borderColor="#35609C"
-        w="100%"
+        px={75}
         rounded="25"
         _pressed={{ 
             _text: {
             color: "#fff" ,
              },bg:"#8AA7CF",
         }}
+        onPress={() => navigation.navigate('BottomTapCM')}
         >
         Care manager</Button>
     </VStack>
-    </Box>
+    </Center>
+    </View>
   )
 }
