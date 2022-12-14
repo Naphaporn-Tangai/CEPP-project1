@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text ,Center} from 'native-base'
 import React from 'react'
 
 export default function EditProfile() {

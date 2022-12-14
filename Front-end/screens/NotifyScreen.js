@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Box, FlatList, Center,Heading,View, Avatar, HStack, VStack, Text, Spacer, Center, NativeBaseProvider } from "native-base";
+import { Box, FlatList, Center,View, Avatar, HStack, VStack, Text, Spacer, } from "native-base";
  const data = [{
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
     fullName: "Aafreen Khan",
@@ -37,14 +37,14 @@ export default function NotifyScreen() {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
     <Center flex={1}>
       
-      <Text fontSize="xl" p="4" pb="3">
+      <Text fontSize="xl">
         Inbox
       </Text>
       <FlatList data={data} renderItem={({
       item
     }) => <Box borderBottomWidth="1" _dark={{
       borderColor: "muted.50"
-    }} borderColor="muted.800" pl={["0", "4"]} pr={["0", "5"]} py="2">
+    }} borderColor="muted.800"pl={["4", "4"]} pr={["0", "5"]} py="3" >
             <HStack space={[2, 3]} justifyContent="space-between">
               <Avatar size="48px" source={{
           uri: item.avatarUrl

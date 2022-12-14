@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Center ,Text } from 'native-base'
 import React from 'react'
 
 export default function SchNewCg() {

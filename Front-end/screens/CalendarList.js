@@ -1,11 +1,12 @@
 import { View, Center  } from 'native-base'
 import React from 'react'
-import {Calendar, CalendarUtils} from 'react-native-calendars';
-export default function Calendar() {
+import {Calendar} from 'react-native-calendars';
+export default function CalendarList() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
     <Center flex={1}>
     <Calendar
+    w="100%"
   markingType={'period'}
   markedDates={{
     '2012-05-15': {marked: true, dotColor: '#7296C7'},
