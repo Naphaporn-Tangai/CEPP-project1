@@ -4,15 +4,14 @@ import Login from "../screens/Login";
 import Register from "../screens/Register"
 import Forgot from "../screens/Forgot"
 import ResetPass from "../screens/ResetPass"
-import HomeCm from '../screens/HomeCm';
-import HomeCg from '../screens/HomeCg';
+
 import ConfirmReset from "../screens/ConfirmReset"
 import InOutScreen from '../screens/InOutScreen';
 
 import BottomTapCM from "./BottomTapCM";
 import BottomTapCG from './BottomTapCG'
 import CmCgScreen from '../screens/CmCgScreen';
-import CalendarNav from './CalendarNav';
+
 
 
 const Stack = createStackNavigator();

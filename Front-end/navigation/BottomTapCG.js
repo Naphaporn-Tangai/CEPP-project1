@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import HomeCg from '../screens/HomeCg';
 import NotifyNav from './NotifyNav'
 import CalendarNav from './CalendarNav';
-import CalendarList from '../screens/CalendarList';
+
 import EditProfileNav from './EditProfileNav';
 import SchCgNav from './SchCgNav';
 import { View, Center  } from 'native-base'

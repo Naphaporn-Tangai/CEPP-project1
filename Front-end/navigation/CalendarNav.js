@@ -2,8 +2,6 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import CalendarList from '../screens/CalendarList';
 
-
-
 const Stack = createStackNavigator();
 
 const CalendarNav = () => {
