@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {useNavigation} from '@react-navigation/native';
 import HomeCm from '../screens/HomeCm';
 import NotifyScreen from '../screens/NotifyScreen'
 import CalendarList from '../screens/CalendarList';
@@ -10,9 +11,10 @@ import { Ionicons ,FontAwesome5 ,AntDesign} from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 
 export default function BottomTapCM() {
+  const navigation = useNavigation();
     return (
       <Tab.Navigator
-      tabBarOptions={{ showLabel: false, style:{ height: 100 ,shadowColor: '#000', }}}>
+      screenOptions={{ showLabel: false, style:{ height: 100 ,shadowColor: '#000', }}}>
          <Tab.Screen name="HomeCm" component={HomeCm} options={{ headerShown: false ,
            tabBarIcon: ({ focused }) => (
            <View style={{ top: '1%'}} >

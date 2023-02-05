@@ -8,74 +8,72 @@ import HomeCm from '../screens/HomeCm';
 import HomeCg from '../screens/HomeCg';
 import ConfirmReset from "../screens/ConfirmReset"
 import InOutScreen from '../screens/InOutScreen';
-import CmCgScreen from '../screens/CmCgScreen';
+
 import BottomTapCM from "./BottomTapCM";
 import BottomTapCG from './BottomTapCG'
+import CmCgScreen from '../screens/CmCgScreen';
+import CalendarNav from './CalendarNav';
+
 
 const Stack = createStackNavigator();
 
 const AuthStack = () => {
-  
+ 
   return (
    
       <Stack.Navigator screenOptions={{}}>
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{ headerShown: false}}
+          options={{headerShown: false}}
         />
 
         <Stack.Screen
           name="Register"
           component={Register}
-          options={{ headerShown: false}}
+          options={{headerShown: false}}
         />
 
         <Stack.Screen
           name="Forgot"
           component={Forgot}
-          options={{ headerShown: false}}
+          options={{headerShown: false}}
         />
 
         <Stack.Screen
           name="ResetPass"
           component={ResetPass}
-          options={{ headerShown: false}}
+          options={{headerShown: false}}
         />
          <Stack.Screen
           name="ConfirmReset"
           component={ConfirmReset}
-          options={{ headerShown: false}}
-        />
-        <Stack.Screen
-          name="CmCgScreen"
-          component={CmCgScreen}
-          options={{ headerShown: false}}
-        />
-        <Stack.Screen
-          name="HomeCm"
-          component={HomeCm}
-        />
-        <Stack.Screen
-          name="HomeCg"
-          component={HomeCg}
-        />
-         <Stack.Screen
-          name="InOutScreen"
-          component={InOutScreen}
-        />
+          options={{headerShown: false}}
+        />  
+       
         <Stack.Screen
         name="BottomTapCM"
         component={BottomTapCM}
-        options={{ headerShown: false}}
+       
         />
-                <Stack.Screen
+        <Stack.Screen
         name="BottomTapCG"
         component={BottomTapCG}
-        options={{ headerShown: false}}
+        options={{headerShown: false}}
+        /> 
+        <Stack.Screen
+          name="CmCgScreen"
+          component={CmCgScreen}
+          options={{headerShown: false}}
         />
+        <Stack.Screen
+        name="InOutScreen"
+        component={InOutScreen}
+        options={{ title: "ลงชื่อเข้า-ออกงาน"  , headerTitleAlign:"center" }}
+        />
+       
       </Stack.Navigator>
-  
+      
   );
 };
 export default AuthStack;

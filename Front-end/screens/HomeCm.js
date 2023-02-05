@@ -7,10 +7,10 @@ import { ProfileNav } from "../components"
 export default function HomeCm({ navigation }) {
     return (
         
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
-            <Center flex={1}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  safeAreaTop>
+            <Center flex={1} >
             <ScrollView showsVerticalScrollIndicator={false} >
-                <VStack safeAreaTop>
+                <VStack >
                     <ProfileNav />
                     <Box ml="6">
                         <Text fontSize="15" fontFamily='Medium' color="#000" marginBottom={3} >

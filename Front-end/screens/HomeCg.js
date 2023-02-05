@@ -18,8 +18,8 @@ import { ProfileNav } from "../components"
 export default function HomeCg({ navigation }) {
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
-        <Center flex={1}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  safeAreaTop>
+        <Center flex={1}  >
             <ScrollView showsVerticalScrollIndicator={false} >
                 <VStack safeAreaTop>
                 <ProfileNav/>
@@ -126,7 +126,7 @@ export default function HomeCg({ navigation }) {
                                     <HStack space={[3.5, 3]} justifyContent="space-between">
                                         <Image rounded="20" source={{
                                             uri: item.url
-                                        }} size="110" />
+                                        }} size="110"  alt="home"/>
                                         <Text color="#8AA7CF" fontFamily='Regular' >
                                             {item.title}
                                         </Text>

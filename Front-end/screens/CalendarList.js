@@ -1,23 +1,59 @@
-import { View, Center  } from 'native-base'
-import React from 'react'
-import {Calendar} from 'react-native-calendars';
+import { View, Center } from 'native-base'
+import React, { useState } from 'react'
+import { StyleSheet, Animated, Easing } from 'react-native';
+import DatePicker from 'react-native-modern-datepicker';
+import { addDays, format, startOfDay , endOfDay} from "date-fns";
+import { Calendar, LocaleConfig } from 'react-native-calendars';
+import { backgroundColor } from 'react-native-calendars/src/style';
+
+
+LocaleConfig.locales.th = {
+  monthNames: [
+    'มกราคม',
+    'กุมภาพันธ์',
+    'มีนาคม',
+    'เมษายน',
+    'พฤษภาคม',
+    'มิถุนายน',
+    'กรกฎาคม',
+    'สิงหาคม',
+    'กันยายน',
+    'ตุลาคม',
+    'พฤศจิกายน',
+    'ธันวาคม',
+  ],
+  
+  dayNames: [
+    'อาทิตย์',
+    'จันทร์',
+    'อังคาร',
+    'พุธ',
+    'พฤหัสบดี',
+    'ศุกร์',
+    'เสาร์',
+  ],
+  dayNamesShort: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+};
+
+LocaleConfig.defaultLocale = 'th';
+
 export default function CalendarList() {
+
+  const date = new Date();
+  const tomorrow = addDays(date, 1);
+  const start = startOfDay(date);
+  const end = startOfDay(date);
+  const dateFormatted = format(date, "yyyy-MM-dd"); 
+  console.log(tomorrow)
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
-    <Center flex={1}>
-    <Calendar
-    w="100%"
-  markingType={'period'}
-  markedDates={{
-    '2012-05-15': {marked: true, dotColor: '#7296C7'},
-    '2012-05-16': {marked: true, dotColor: '#7296C7'},
-    '2012-05-21': {startingDay: true, color: '#7296C7', textColor: 'white'},
-    '2012-05-22': {color: '#8AA7CF', textColor: 'white'},
-    '2012-05-23': {color: '#8AA7CF', textColor: 'white', marked: true, dotColor: 'white'},
-    '2012-05-24': {color: '#8AA7CF', textColor: 'white'},
-    '2012-05-25': {endingDay: true, color: '#7296C7', textColor: 'white'}
-  }}
-/>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
+      <Center flex={1}>
+
+
+        <Calendar
+          
+          style={{ height: 700 , width: 420 , paddingTop: 30}}
+        />
       </Center>
     </View>
   )
