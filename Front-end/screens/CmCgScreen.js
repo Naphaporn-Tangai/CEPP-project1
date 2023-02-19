@@ -12,6 +12,7 @@ export default function CmCgScreen({ navigation }) {
         source={require("../assets/icon.png")}
         size="2xl"
         marginLeft={6}
+        alt="icon"
         />
       <VStack safeAreaTop space={3} alignItems="center" mb={3}>
         <Button 

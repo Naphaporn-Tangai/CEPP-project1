@@ -1,9 +1,8 @@
-
+import { Actionsheet, useDisclose, Box , Input , HStack ,Icon , Text ,VStack, Spacer ,Switch ,View , Center} from "native-base";
 import React from 'react'
-import { Input, Box , Button , HStack,Icon} from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
 import { COLORS } from '../constants';
-export default function AddImage() {
+export default function AddTittle() {
   return (
     <Box paddingX={70}>
        <Input 
@@ -12,13 +11,14 @@ export default function AddImage() {
         md: "40%"
       }}
        variant="unstyled" 
-       placeholder="เพิ่มรูปภาพ" 
+       placeholder="ชื่อ" 
+       size="md" 
        _input={{ color:"#35609C"}} 
        fontFamily='Regular'
        fontSize="17 px"
        placeholderTextColor={COLORS.primary} 
-       InputLeftElement={<Icon as={<FontAwesome name="camera" />} 
-       size="md" color={COLORS.primary}  />} />
+       InputLeftElement={<Icon as={<FontAwesome name="file-text" />} 
+       size="md"  color={COLORS.primary}  />} />
     </Box>
   )
 }
