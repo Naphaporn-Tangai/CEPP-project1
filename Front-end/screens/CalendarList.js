@@ -51,8 +51,18 @@ export default function CalendarList() {
 
 
         <Calendar
-          
           style={{ height: 700 , width: 420 , paddingTop: 30}}
+          markingType={"custom"}
+          theme={{
+            textDayFontFamily: 'Regular',
+            selectedDayBackgroundColor: '#35609C',
+            calendarBackground: "#fff",
+            selectedDayTextColor: "#fff",
+            selectedDayBackgroundColor: "#35609C",
+            todayTextColor: '#fff',
+            todayBackgroundColor: '#35609C',
+            'stylesheet.day': { today: { backgroundColor: '#35609C', borderRadius: 100, width: 35 ,height: 35 } },
+          }}
         />
       </Center>
     </View>

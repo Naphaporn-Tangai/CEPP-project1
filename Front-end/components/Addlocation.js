@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from '../constants';
 export default function Addlocation() {
   return (
-    <>
+    <Box paddingX={70}>
        <Input 
          w={{
           base: "80%",
@@ -14,10 +14,10 @@ export default function Addlocation() {
        placeholder="สถานที่" 
        _input={{ color:"#35609C"}} 
        fontFamily='Regular'
-       fontSize="md"
+       fontSize="17 px"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<Ionicons name="location-sharp" />} 
        size="md" color={COLORS.primary}  />} />
-    </>
+    </Box>
   )
 }

@@ -10,7 +10,7 @@ export default function InOutScreen({ navigation }) {
     
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop>
     <Center flex={1}>
-    <Box safeAreaTop flex={1} >
+    <Box  flex={1} top='3%'>
     <HStack space={3}  mx={10} mb={3} >
         <Button 
         value="1"
@@ -48,7 +48,7 @@ export default function InOutScreen({ navigation }) {
         ออกงาน</Button>
     </HStack>
     
-      <VStack mx={10} mb={3}>
+      <VStack right={30} mb={3}>
         <Addlocation/>
         <AddImage/>
       </VStack>

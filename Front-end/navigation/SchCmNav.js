@@ -1,11 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import SchNewCg from '../screens/SchNewCg';
+import SchNewCm from '../screens/SchNewCm';
 import { HeaderBackButton } from '@react-navigation/elements';
 
 const Stack = createStackNavigator();
 
-const SchCgNav = () => {
+const SchCmNav = () => {
   
   return (
    
@@ -13,8 +13,8 @@ const SchCgNav = () => {
         
       
         <Stack.Screen 
-          name="SchNewCg"
-          component={SchNewCg}
+          name="SchNewCm"
+          component={SchNewCm}
           options={
             ({ navigation, route }) => ({
               headerLeft: (props) => (
@@ -33,4 +33,4 @@ const SchCgNav = () => {
   
   );
 };
-export default SchCgNav;
+export default SchCmNav;

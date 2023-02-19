@@ -18,10 +18,10 @@ import { ProfileNav } from "../components"
 export default function HomeCg({ navigation }) {
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  safeAreaTop>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  top="5%">
         <Center flex={1}  >
             <ScrollView showsVerticalScrollIndicator={false} >
-                <VStack safeAreaTop>
+                <VStack >
                 <ProfileNav/>
                     <Box ml="6">
                         <HStack justifyContent="space-between" alignItems="center" marginBottom={3}>

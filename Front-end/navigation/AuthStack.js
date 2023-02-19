@@ -11,7 +11,7 @@ import InOutScreen from '../screens/InOutScreen';
 import BottomTapCM from "./BottomTapCM";
 import BottomTapCG from './BottomTapCG'
 import CmCgScreen from '../screens/CmCgScreen';
-
+import DrawerHome from "./DrawerHome";
 
 
 const Stack = createStackNavigator();
@@ -53,7 +53,7 @@ const AuthStack = () => {
         <Stack.Screen
         name="BottomTapCM"
         component={BottomTapCM}
-       
+        options={{headerShown: false}}
         />
         <Stack.Screen
         name="BottomTapCG"
@@ -69,6 +69,11 @@ const AuthStack = () => {
         name="InOutScreen"
         component={InOutScreen}
         options={{ title: "ลงชื่อเข้า-ออกงาน"  , headerTitleAlign:"center" }}
+        />
+        <Stack.Screen 
+        name="DrawerHome"
+        component={DrawerHome}
+       
         />
        
       </Stack.Navigator>

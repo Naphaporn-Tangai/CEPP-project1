@@ -1,5 +1,6 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator  } from "@react-navigation/stack";
+import { HeaderBackButton } from '@react-navigation/elements';
 import CalendarList from '../screens/CalendarList';
 
 const Stack = createStackNavigator();
@@ -13,12 +14,21 @@ const CalendarNav = () => {
         <Stack.Screen 
           name="CalendarList"
           component={CalendarList}
-          options={{title: "ปฎิทิน"  , headerTitleAlign:"center"}}
+          
+          options={
+          ({ navigation, route }) => ({
+            headerLeft: (props) => (
+              <HeaderBackButton
+                  {...props}
+                  onPress={() => {
+                      navigation.goBack();
+                  }} />
+          ) ,
+          title: "ปฎิทิน"  , 
+          headerTitleAlign:"center", })}
           
         />
-        
-        
-         
+
       </Stack.Navigator>
   
   );
