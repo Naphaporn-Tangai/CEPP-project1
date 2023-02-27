@@ -7,6 +7,7 @@ import AddColors from './AddColors';
 import AddDate from './AddDate';
 import AddSwitch from './AddSwitch';
 import AddTime from './AddTime';
+
 export {
     ProfileNav,Addlocation,AddImage,AddTittle,AddColors,AddDate,AddSwitch,AddTime,
 };

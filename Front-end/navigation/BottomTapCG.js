@@ -68,16 +68,17 @@ export default function BottomTapCG() {
         ></Ionicons>
         
        </View>  )}} />
-        <Tab.Screen name="EditProfileNav" component={EditProfileNav} options={{ 
+        <Tab.Screen name="EditProfileNav"
+        component={EditProfileNav} options={{
+          tabBarVisible: false,
           tabBarIcon: ({ focused }) => (
           <View style={{ top: '-3%'}}>
               <FontAwesome5
                 name="user-alt"
                 size={25}
-                color={focused ? '#35609C': 'gray'}
-        ></FontAwesome5>
-        
-       </View>  )}} />
+                color={focused ? '#35609C': 'gray'}/>
+       </View>),
+      }} />
       </Tab.Navigator>
     );
   }
