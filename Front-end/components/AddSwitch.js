@@ -8,7 +8,7 @@ export default function AddSwitch() {
   return (
     <Box paddingX={70}>
       <HStack justifyContent="space-between">
-      <Text fontFamily='Regular' fontSize="17 px">แจ้งเตือนหน้าหลัก</Text>
+      <Text fontFamily='Regular' fontSize="17 px" color="#35609C">แจ้งเตือนหน้าหลัก</Text>
       <Spacer />
       <Switch offTrackColor={COLORS.primary} onTrackColor="#DDDFE1" defaultIsChecked />
       </HStack>

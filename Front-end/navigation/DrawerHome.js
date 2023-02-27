@@ -1,6 +1,6 @@
 import React from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Datum from "../screens/Datum";
+import Datum from "../screens/DatumCG";
 import EditProfileNav from './EditProfileNav';
 import Login from "../screens/Login";
 import BottomTapCG from "./BottomTapCG";

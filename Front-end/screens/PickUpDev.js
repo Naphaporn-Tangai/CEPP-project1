@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Datum({ navigation }) {
+export default function PickUp() {
   return (
     <View>
-      <Text>Datum</Text>
+      <Text>PickUp</Text>
     </View>
   )
 }

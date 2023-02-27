@@ -17,7 +17,7 @@ import {
 import { Calendar, LocaleConfig, DateObject } from "react-native-calendars";
 import { FontAwesome5 } from "@expo/vector-icons";
 import React, { useState } from "react";
-import moment from "moment";
+import moment from 'moment';
 import { COLORS } from "../constants";
 
 export default function AddDate() {
@@ -25,6 +25,7 @@ export default function AddDate() {
     startDate: null,
     endDate: null,
   });
+  const [result, setResult] = useState('');
   const getRangeMarkedDates = () => {
     const { startDate, endDate } = selectedRange;
     const rangeMarkedDates = {};
@@ -32,7 +33,7 @@ export default function AddDate() {
     if (startDate && endDate) {
       let currentDate = new Date(startDate);
       while (currentDate <= new Date(endDate)) {
-        const dateString = currentDate.toISOString().split('T')[0];
+        const dateString = currentDate.toISOString().substring(0, 10);
         if (currentDate.getTime() === new Date(startDate).getTime()) {
           rangeMarkedDates[dateString] = {
             startingDay: true,
@@ -65,15 +66,22 @@ export default function AddDate() {
   
     return rangeMarkedDates;
   };
-  
+  const handleSavePress = () => {
+    setResult(
+      `${selectedRange.startDate} - ${selectedRange.endDate}`
+    );
+    
+    onClose();
+  };
   const { isOpen, onOpen, onClose } = useDisclose();
   return (
     <Box paddingX={70}>
       <Input
         w={{
-          base: "65%",
+          base: "79%",
           md: "25%",
         }}
+        
         showSoftInputOnFocus={false}
         onPressIn={onOpen}
         variant="unstyled"
@@ -90,7 +98,7 @@ export default function AddDate() {
             color={COLORS.primary}
           />
         }
-      />
+      >{result}</Input>
 
       <Actionsheet isOpen={isOpen} onClose={onClose}>
         <Actionsheet.Content bgColor="#fff">
@@ -175,6 +183,9 @@ export default function AddDate() {
                   bg: "#8AA7CF",
                   _text: { color: "#35609C" },
                 }}
+                
+                onPress={handleSavePress}
+                
               >
                 บันทึก
               </Button>
