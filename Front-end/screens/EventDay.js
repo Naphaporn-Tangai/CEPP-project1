@@ -4,7 +4,7 @@ import React from 'react'
 export default function () {
   return (
     <View>
-      <Text>\</Text>
+      <Text></Text>
     </View>
   )
 }

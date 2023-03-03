@@ -6,7 +6,7 @@ import { COLORS } from '../constants';
 
 export default function CmCgScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} bgColor="#fff" safeAreaTop >
     <Center flex={1} >
         <Image
         source={require("../assets/icon.png")}

@@ -6,8 +6,8 @@ import React from 'react'
 import { COLORS } from '../constants';
 export default function AddTime() {
   return (
-    <Box paddingX={70}>
-       <HStack mb={3}>
+    <Box paddingX={60} mb={1}>
+       <HStack >
         <Input 
        w={{
         base: "60%",

@@ -6,7 +6,7 @@ import React from 'react'
 import { COLORS } from '../constants';
 export default function AddSwitch() {
   return (
-    <Box paddingX={70}>
+    <Box paddingX={60} >
       <HStack justifyContent="space-between">
       <Text fontFamily='Regular' fontSize="17 px" color="#35609C">แจ้งเตือนหน้าหลัก</Text>
       <Spacer />

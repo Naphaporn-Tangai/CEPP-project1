@@ -5,7 +5,7 @@ import { MaterialIcons, Feather, FontAwesome } from "@expo/vector-icons";
 export default function ResetPass({ navigation }) {
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} bgColor="#fff">
     <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
         <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="20 px"

@@ -5,7 +5,7 @@ import { MaterialIcons, Feather, FontAwesome } from "@expo/vector-icons";
 export default function Login({ navigation }) {
   const [show, setShow] = React.useState(false);
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'  }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'  }} bgColor="#fff">
       <Center flex={1}>
 
     

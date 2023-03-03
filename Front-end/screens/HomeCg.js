@@ -32,6 +32,7 @@ export default function HomeCg({ navigation }) {
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
       top="5%"
+      bgColor="#fff"
     >
       <Center flex={1}>
         <ScrollView showsVerticalScrollIndicator={false}>

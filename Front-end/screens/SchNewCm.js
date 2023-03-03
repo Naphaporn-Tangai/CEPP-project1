@@ -13,18 +13,46 @@ export default function SchNewCm() {
 
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
-    <Center flex={1} >
-    <Box  flex={1} top='3%'>
-    <VStack  mb={5}>
-        <AddTittle/>
-        <Addlocation/>
-        <AddColors/>
-        <AddDate/>
-        <AddTime/>
-        <AddSwitch/>
-      </VStack>
-      </Box>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} bgColor="#fff" safeAreaTop >
+  <Center flex={1}>
+        <Box flex={1} top="3%">
+          <VStack>
+            <AddTittle />
+            <Addlocation />
+            <AddDate />
+            <AddTime />
+            <DateChoose />
+            <AddColors />
+            <AddSwitch />
+          </VStack>
+
+          <Button
+            size="md"
+            borderRadius={10}
+            backgroundColor="#35609C"
+            _text={{
+              color: "#FFFF",
+              fontFamily: "Medium",
+              fontSize: "md",
+            }}
+            _pressed={{
+              bg: "#8AA7CF",
+              _text: { color: "#35609C" },
+            }}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              marginBottom: 60,
+              marginHorizontal: 45,
+             
+            }}
+            onPress={() => navigation.navigate("HomeCg")}
+          >
+            บันทึก
+          </Button>
+        </Box>
       </Center>
     </View>
   )

@@ -5,7 +5,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { COLORS } from '../constants';
 export default function AddImage() {
   return (
-    <Box paddingX={70}>
+    <Box paddingX={60} >
        <Input 
        w={{
         base: "80%",

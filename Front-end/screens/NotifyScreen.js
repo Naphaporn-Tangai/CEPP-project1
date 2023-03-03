@@ -49,7 +49,7 @@ export default function NotifyScreen() {
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-     
+       
       bgColor="#ffff"
     >
       <Center flex={1}  top="5%">

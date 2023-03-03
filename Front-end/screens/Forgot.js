@@ -6,7 +6,7 @@ export default function Forgot({ navigation }) {
  
   return (
     
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} bgColor="#fff" safeAreaTop >
     <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
         <Text color="#35609C" bottom='80 px' fontFamily='Medium' fontSize="4xl" marginTop="50 px"

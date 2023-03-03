@@ -9,7 +9,7 @@ export default function ConfirmReset({ navigation }) {
   const thirdInput = useRef();
   const fourthInput = useRef();
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} safeAreaTop >
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} bgColor="#fff" safeAreaTop >
     <Center flex={1}>
       <FormControl style={{ fontFamily: 'Regular' }}>
         <Text color="#35609C" bottom='35 px' fontFamily='Medium' fontSize="4xl" marginTop="20 px"

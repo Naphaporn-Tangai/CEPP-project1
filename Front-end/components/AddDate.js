@@ -16,7 +16,7 @@ import {
 } from "native-base";
 import { Calendar, LocaleConfig, DateObject } from "react-native-calendars";
 import { FontAwesome5 } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import moment from 'moment';
 import { COLORS } from "../constants";
 
@@ -70,12 +70,16 @@ export default function AddDate() {
     setResult(
       `${selectedRange.startDate} - ${selectedRange.endDate}`
     );
-    
     onClose();
   };
   const { isOpen, onOpen, onClose } = useDisclose();
+  useEffect(() => {
+    return () => {
+      setResult('');
+    };
+  }, []);
   return (
-    <Box paddingX={70}>
+    <Box paddingX={60} >
       <Input
         w={{
           base: "79%",

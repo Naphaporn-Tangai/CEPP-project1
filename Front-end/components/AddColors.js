@@ -10,9 +10,10 @@ export default function AddColors() {
     onClose
   } = useDisclose();
   return (
-  <Box >
+  <Box mb={2}>
     <Pressable
-    paddingX={70}
+    paddingX={60}
+    paddingY={2}
       onPress={onOpen} _pressed={{ bg: "coolGray.200" }}>
       <Box>
         <HStack justifyContent="space-between">

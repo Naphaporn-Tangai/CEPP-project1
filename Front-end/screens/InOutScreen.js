@@ -8,62 +8,51 @@ import {
   Box,
   Footer,
   FooterTab,
+  Text
 } from "native-base";
 import { Addlocation } from "../components";
 import { AddImage } from "../components";
 import { ButtonSave } from "../components";
 
 export default function InOutScreen({ navigation }) {
-  const [choice, setChoice] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+  
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
       safeAreaTop
+      bgColor="#fff"
     >
       <Center flex={1}>
-        <Box flex={1} top="3%">
+        <Box flex={1} top="5%">
           <HStack space={3} mx={10} mb={3}>
             <Button
-              value="1"
-              onPress={() => setChoice(1)}
+              
+              onPress={() => handleOptionSelect('option1')}
               variant="outline"
-              _text={{
-                color: "#35609C",
-                fontFamily: "Regular",
-                fontSize: "md",
-              }}
-              isPressed={choice === 1}
-              _pressed={{
-                _text: {
-                  color: "#fff",
-                },
-                bg: "#35609C",
-              }}
+              style={{ backgroundColor: selectedOption === 'option1' ? '#35609C' : '#fff' }}
               borderColor="#35609C"
               w="50%"
             >
+              <Text style={{ color: selectedOption === 'option1' ? '#fff' : '#35609C' }} fontFamily="Regular" fontSize="md">
               เข้างาน
+              </Text>
             </Button>
             <Button
-              value="2"
-              onPress={() => setChoice(2)}
+              
+              onPress={() => handleOptionSelect('option2')}
               variant="outline"
-              _text={{
-                color: "#35609C",
-                fontFamily: "Regular",
-                fontSize: "md",
-              }}
-              isPressed={choice === 2}
-              _pressed={{
-                _text: {
-                  color: "#fff",
-                },
-                bg: "#35609C",
-              }}
+              style={{ backgroundColor: selectedOption === 'option2' ? '#35609C' : '#fff' }}
               borderColor="#35609C"
               w="50%"
             >
+              <Text style={{ color: selectedOption === 'option2' ? '#fff' : '#35609C' }} fontFamily="Regular" fontSize="md">
               ออกงาน
+              </Text>
             </Button>
           </HStack>
 
@@ -90,7 +79,7 @@ export default function InOutScreen({ navigation }) {
       bottom: 0,
       left: 0,
       right: 0,
-      marginBottom: 40,
+      marginBottom: 60,
       marginHorizontal: 20,
     }}
     onPress={() => navigation.navigate('BottomTapCG')}
