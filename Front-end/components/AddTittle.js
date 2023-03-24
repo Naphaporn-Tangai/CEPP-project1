@@ -4,7 +4,8 @@ import { FontAwesome } from "@expo/vector-icons";
 import { COLORS } from '../constants';
 export default function AddTittle() {
   return (
-    <Box paddingX={60} mb={1}>
+    <Box paddingX={70} mb={1}>
+      
        <Input 
        w={{
         base: "80%",
@@ -18,7 +19,7 @@ export default function AddTittle() {
        fontSize="17 px"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<FontAwesome name="file-text" />} 
-       size="md"  color={COLORS.primary}  />} />
+       size="md"  color={COLORS.primary}  marginRight={2} />} />
     </Box>
   )
 }

@@ -1,98 +1,135 @@
-import React,{useState} from "react"
+import React, { useState } from "react";
 import {
-  StyleSheet,
-  Text,
-  View,
   Image,
-  TouchableOpacity,
-  TouchableOpacityBase
-} from "react-native"
+  Box,
+  Input,
+  HStack,
+  Icon,
+  Text,
+  VStack,
+  Spacer,
+  View,
+  Center,
+  Pressable,
+  Button,
+  IconButton,
+} from "native-base";
+import { AddTittle } from "../components";
+import { AddImage } from "../components";
+import { FontAwesome5 } from "@expo/vector-icons";
 
+import { COLORS } from "../constants";
+import { Addlocation } from "../components";
 
-export default function ReturnDev() {
+import { AddColors } from "../components";
+import { AddDate } from "../components";
+import { AddTime } from "../components";
+import { AddSwitch } from "../components";
+import { Elderly } from "../components";
+import { GropElderly } from "../components";
+import { Issues } from "../components";
+import { DateChoose } from "../components";
+import { DateRe } from "../components";
+
+export default function ReturnDev({ navigation }) {
+  const [quantity, setQuantity] = useState(0);
+  const incrementQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   return (
-    <View style={styles.barequipment}>
-    <View style={styles.Subcontainer}>
-        <Image source={{uri:'https://img.icons8.com/ios-glyphs/256/new-document.png'}} style={styles.Image}></Image>
-        <TouchableOpacity>
-            <Text style={styles.Textdetail}>{Name}</Text>
-        </TouchableOpacity>
-    </View>
-    <View style={{display:'flex',flexDirection:"row",alignItems:"center",justifyContent:"space-between",paddingRight:20}}>
-        <View style={styles.Subcontainer}>
-            <Image source={{uri:'https://img.icons8.com/material-rounded/256/ingredients-list.png'}} style={styles.Image}></Image>
-            <TouchableOpacity>
-                <Text style={styles.Textdetail}>{Amount}</Text>
-            </TouchableOpacity>
-        </View>
-            <View style={{display:"flex",flexDirection:'row',alignItems:"center"}}>
-                <TouchableOpacity style={styles.Subamount} onPress={() => AddAmount(NumAmount)}>
-                    <Image source={{uri:'https://img.icons8.com/material-outlined/256/plus-2-math.png'}} style={styles.Image}></Image>
-                </TouchableOpacity>
-                <Text style={styles.NumAmount}>{NumAmount}</Text>
-                <TouchableOpacity style={styles.Subamount} onPress={() => DeleteAmount(NumAmount)}>    
-                    <Image source={{uri:'https://img.icons8.com/material-outlined/256/indeterminate-checkbox.png'}} style={styles.Image}></Image>
-                </TouchableOpacity>
-            </View>
-    </View>
-    <View style={styles.Subcontainer}>
-        <Image source={{uri:'https://img.icons8.com/ios-glyphs/256/compact-camera.png'}} style={styles.Image}></Image>
-        <TouchableOpacity>
-            <Text style={styles.Textdetail}>{Imagetext}</Text>
-        </TouchableOpacity>
-    </View>
-    <View style={styles.Subcontainer}>
-        <Image source={{uri:'https://img.icons8.com/ios-glyphs/256/calendar.png'}} style={styles.Image}></Image>
-        <TouchableOpacity>
-            <Text style={styles.Textdetail}>{Date}</Text>
-        </TouchableOpacity>
-    </View>
-    <TouchableOpacity onPress={() => SaveEquipment()} style={{margin:30,height:50,justifyContent:"center",display:"flex",alignItems:"center",marginTop:50,backgroundColor:'blue',borderRadius:10}}>    
-        <Text style={{fontSize:24,fontWeight:'500',color:'white'}}>บันทึก</Text>
-    </TouchableOpacity>
-</View>
-)
-}
+    <View
+      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      bgColor="#fff"
+      safeAreaTop
+    >
+      <Center flex={1}>
+        <Box flex={1} top="3%">
+          <VStack>
+            <AddTittle />
+            <Box paddingX={70}>
+              <HStack justifyContent="space-between">
+                <Icon
+                  as={FontAwesome5}
+                  name="clipboard-list"
+                  size="xl"
+                  marginRight={3}
+                  color="#35609C"
+                />
+                <Text
+                  fontFamily="Regular"
+                  fontSize="17 px"
+                  color="#35609C"
+                  marginRight="40%"
+                >
+                  อุปกรณ์ที่ยืม
+                </Text>
+                <Spacer />
+                <Button
+                  onPress={decrementQuantity}
+                  width={8}
+                  height={8}
+                  justifyContent="center"
+                  alignItems="center"
+                  bg="#35609C"
+                >
+                  <Text fontSize={20} style={{ color: "#fff" }} w={8} h={8}>
+                    -
+                  </Text>
+                </Button>
 
-const styles = StyleSheet.create({
-  barequipment:{
-      flex:1,
-      marginTop:30,
-      // backgroundColor:'green'
-  },
-  TextNavber:{
-      fontSize:24,
-      color:'black'
-  },
-  Textdetail:{
-      fontSize:16,
-      color:'darkblue',
-      padding:10,
-      paddingRight:20
-  },
-  Image:{
-      width:30,
-      height:30,
-     
-  },
-  Subcontainer:{
-      display:"flex",
-      flexDirection:"row",
-      paddingLeft:20,
-      alignItems:"center"
-  },
-  Subamount:{
-      display:"flex",
-      flexDirection:"row"
-  },
-  NumAmount:{
-      fontSize:16,
-      fontWeight:"bold",
-      color:'darkblue',
-      padding:5
-  },
-  SaveButton:{
-      width:50,
-      height:50,
-  }
-})
+                <Input
+                  keyboardType="numeric"
+                  value={quantity.toString()}
+                  onChangeText={(value) => setQuantity(parseInt(value))}
+                  w={8}
+                  h={8}
+                />
+
+                <Button onPress={incrementQuantity} w={8} h={8} bg="#35609C">
+                  <Text fontSize={20} style={{ color: "#fff" }} w={8} h={8}>
+                    +
+                  </Text>
+                </Button>
+              </HStack>
+            </Box>
+            <AddImage />
+            <DateRe />
+          </VStack>
+
+          <Button
+            size="md"
+            borderRadius={10}
+            backgroundColor="#35609C"
+            _text={{
+              color: "#FFFF",
+              fontFamily: "Medium",
+              fontSize: "md",
+            }}
+            _pressed={{
+              bg: "#8AA7CF",
+              _text: { color: "#35609C" },
+            }}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              marginBottom: 60,
+              marginHorizontal: 45,
+            }}
+            onPress={() => navigation.navigate("ShowPickRe")}
+          >
+            บันทึก
+          </Button>
+        </Box>
+      </Center>
+    </View>
+  );
+}

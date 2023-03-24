@@ -12,7 +12,6 @@ import {
 } from "native-base";
 import { Addlocation } from "../components";
 import { AddImage } from "../components";
-import { ButtonSave } from "../components";
 
 export default function InOutScreen({ navigation }) {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -80,7 +79,7 @@ export default function InOutScreen({ navigation }) {
       left: 0,
       right: 0,
       marginBottom: 60,
-      marginHorizontal: 20,
+      marginHorizontal: 40,
     }}
     onPress={() => navigation.navigate('BottomTapCG')}
   >

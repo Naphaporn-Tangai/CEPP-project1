@@ -8,8 +8,9 @@ import { AddColors } from "../components"
 import { AddDate } from "../components"
 import { AddTime } from "../components"
 import { AddSwitch } from "../components"
+import { DateChoose } from "../components";
 
-export default function SchNewCm() {
+export default function SchNewCm({ navigation }) {
 
 
   return (

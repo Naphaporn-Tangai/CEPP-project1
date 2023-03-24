@@ -32,7 +32,7 @@ export default function GropElderly() {
   return (
     <Box mb={2}>
       <Pressable
-              paddingX={60}
+              paddingX={70}
               paddingY={2}
               onPress={onOpen}
               _pressed={{ bg: "coolGray.200" }}

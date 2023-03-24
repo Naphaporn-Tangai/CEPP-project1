@@ -11,7 +11,6 @@ import {
   Switch,
   View,
   Center,
-  Pressable,
   Button,
 } from "native-base";
 import React from "react";
@@ -21,6 +20,7 @@ import {
   FontAwesome5,
   MaterialCommunityIcons,
   Entypo,
+  Feather,
 } from "@expo/vector-icons";
 import { COLORS } from "../constants";
 import { Addlocation } from "../components";
@@ -33,10 +33,8 @@ import { Elderly } from "../components";
 import { GropElderly } from "../components";
 import { Issues } from "../components";
 import { DateChoose } from "../components";
-import { AddFf } from "../components";
 
 export default function SchNewCg({ navigation }) {
-  const { isOpen, onOpen, onClose } = useDisclose();
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -56,7 +54,6 @@ export default function SchNewCg({ navigation }) {
             <Issues />
             <AddColors />
             <AddSwitch />
-           
           </VStack>
 
           <Button
@@ -79,7 +76,6 @@ export default function SchNewCg({ navigation }) {
               right: 0,
               marginBottom: 60,
               marginHorizontal: 45,
-             
             }}
             onPress={() => navigation.navigate("HomeCg")}
           >

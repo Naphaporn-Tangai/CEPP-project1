@@ -11,8 +11,9 @@ import Elderly from './Elderly';
 import GropElderly from './GropElderly';
 import Issues from './Issues';
 import DateChoose from './DateChoose';
-
+import DateRe from './DateRe';
+import DatePick from './DatePick';
 export {
     ProfileNav,Addlocation,AddImage,AddTittle,AddColors,AddDate,
-    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,
+    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,DateRe,DatePick
 };

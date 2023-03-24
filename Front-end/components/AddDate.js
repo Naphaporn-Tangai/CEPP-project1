@@ -16,14 +16,20 @@ import {
 } from "native-base";
 import { Calendar, LocaleConfig, DateObject } from "react-native-calendars";
 import { FontAwesome5 } from "@expo/vector-icons";
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useFocusEffect } from "@react-navigation/native";
 import moment from 'moment';
 import { COLORS } from "../constants";
 
 export default function AddDate() {
+  useFocusEffect(
+    useCallback(() => {
+      setResult('');
+    }, [])
+  );
   const [selectedRange, setSelectedRange] = useState({
-    startDate: null,
-    endDate: null,
+    startDate: undefined,
+    endDate: undefined,
   });
   const [result, setResult] = useState('');
   const getRangeMarkedDates = () => {
@@ -68,41 +74,36 @@ export default function AddDate() {
   };
   const handleSavePress = () => {
     setResult(
-      `${selectedRange.startDate} - ${selectedRange.endDate}`
+      `${moment(selectedRange.startDate).format("DD/MM/YY")} - ${moment(selectedRange.endDate).format("DD/MM/YY")}`
     );
     onClose();
   };
   const { isOpen, onOpen, onClose } = useDisclose();
-  useEffect(() => {
-    return () => {
-      setResult('');
-    };
-  }, []);
   return (
-    <Box paddingX={60} >
-      <Input
-        w={{
-          base: "79%",
-          md: "25%",
-        }}
-        
-        showSoftInputOnFocus={false}
-        onPressIn={onOpen}
-        variant="unstyled"
-        placeholder="วันที่"
-        size="md"
-        _input={{ color: "#35609C" }}
-        fontFamily="Regular"
-        fontSize="17 px"
-        placeholderTextColor={COLORS.primary}
-        InputLeftElement={
+  <Box >
+    <Pressable 
+      paddingX={70}
+    paddingY={2}  onPressIn={onOpen}>
+        <Box >
+          <HStack>
           <Icon
             as={<FontAwesome5 name="calendar-alt" />}
             size="md"
             color={COLORS.primary}
+            marginRight={4}
           />
-        }
-      >{result}</Input>
+          <Text
+            fontFamily="Regular"
+            fontSize="17 px"
+            color="#35609C"
+           
+          >
+           { result ? result : 'วันที่' }
+          </Text>
+         
+          </HStack>
+        </Box>
+      </Pressable>
 
       <Actionsheet isOpen={isOpen} onClose={onClose}>
         <Actionsheet.Content bgColor="#fff">
@@ -151,25 +152,32 @@ export default function AddDate() {
                 <FormControl.Label _text={{ fontFamily: "Regular" }}>
                   วันที่เริ่ม
                 </FormControl.Label>
-                <Input
-                  variant="outline"
+                <Box
+                  bg="#fff"
                   borderWidth={1.5}
                   borderColor="#DDDFE1"
+                  borderRadius={10}
+                  padding={2}
                 >
-                  {selectedRange.startDate && `${selectedRange.startDate}`}
-                </Input>
+                   {selectedRange.startDate && moment(selectedRange.startDate, "YYYY-MM-DD", true).isValid() ? 
+                   moment(selectedRange.startDate).format("DD/MM/YY") : ''}
+                </Box>
               </FormControl>
               <FormControl>
                 <FormControl.Label _text={{ fontFamily: "Regular" }}>
                   วันที่สิ้นสุด
                 </FormControl.Label>
-                <Input
-                  variant="outline"
+                <Box
+                bg="#fff"
                   borderWidth={1.5}
                   borderColor="#DDDFE1"
+                  borderRadius={10}
+                  padding={2}
                 >
-                  {selectedRange.endDate && `${selectedRange.endDate}`}
-                </Input>
+                  {selectedRange.endDate && moment(selectedRange.endDate, "YYYY-MM-DD", true).isValid() ? 
+                   moment(selectedRange.endDate).format("DD/MM/YY") : ''}
+                 
+                </Box>
               </FormControl>
             
             </HStack>  

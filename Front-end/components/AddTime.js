@@ -6,7 +6,7 @@ import React from 'react'
 import { COLORS } from '../constants';
 export default function AddTime() {
   return (
-    <Box paddingX={60} mb={1}>
+    <Box paddingX={70} mb={1}>
        <HStack >
         <Input 
        w={{
@@ -21,7 +21,7 @@ export default function AddTime() {
        fontSize="17 px"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<FontAwesome5 name="clock" />} 
-       size="md"  color={COLORS.primary}  />} />
+       size="md"  color={COLORS.primary} marginRight={2} />} />
        <Input 
        w={{
         base: "60%",
@@ -35,7 +35,7 @@ export default function AddTime() {
        fontSize="17 px"
        placeholderTextColor={COLORS.primary} 
        InputLeftElement={<Icon as={<MaterialCommunityIcons name="clock" />} 
-       size="md"  color={COLORS.primary}  />} />
+       size="md"  color={COLORS.primary} marginRight={2} />} />
        </HStack>
     </Box>
   )

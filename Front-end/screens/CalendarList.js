@@ -44,7 +44,6 @@ export default function CalendarList() {
   const start = startOfDay(date);
   const end = startOfDay(date);
   const dateFormatted = format(date, "yyyy-MM-dd"); 
-  console.log(tomorrow)
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}  bgColor="#fff">
       <Center flex={1}>

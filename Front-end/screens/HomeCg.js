@@ -15,12 +15,14 @@ import {
   ScrollView,
   Image,
   View,
+  Pressable
 } from "native-base";
 import {
   Feather,
   FontAwesome,
   FontAwesome5,
   Ionicons,
+  MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import { Video, Date, COLORS } from "../constants";
@@ -39,32 +41,10 @@ export default function HomeCg({ navigation }) {
           <VStack>
             <ProfileNav />
             <Box ml="6">
-              <HStack
-                justifyContent="space-between"
-                alignItems="center"
-                marginBottom={3}
-              >
-                <Text fontSize="15" fontFamily="Medium" color="#000">
-                  4 ตุลาคม 2565
-                </Text>
-                <Spacer />
-                <Button
-                  onPress={() => navigation.navigate("InOutScreen")}
-                  size="sm"
-                  px={2}
-                  py={1.5}
-                  bg="#8AA7CF"
-                  _text={{ color: "#35609C", fontFamily: "Medium" }}
-                  rounded="25"
-                  mr={6}
-                  _pressed={{
-                    bg: "#35609C",
-                    _text: { color: "#fff" },
-                  }}
-                >
-                  ลงชื่อเข้างาน
-                </Button>
-              </HStack>
+              <Text fontSize="15" fontFamily="Medium" color="#000">
+                4 ตุลาคม 2565
+              </Text>
+
               <FlatList
                 data={Date}
                 horizontal
@@ -150,6 +130,7 @@ export default function HomeCg({ navigation }) {
                     bg="#EBF3FE"
                     rounded="30"
                     p={4}
+                    onPress={() => navigation.navigate("Article")}
                   />
                   <Text color="#35609C" fontFamily="Regular" fontSize="12">
                     บทความ
@@ -169,6 +150,7 @@ export default function HomeCg({ navigation }) {
                     bg="#EBF3FE"
                     rounded="30"
                     p={4}
+                    onPress={() => navigation.navigate("Clip")}
                   />
                   <Text color="#35609C" fontFamily="Regular" fontSize="12">
                     สื่อความรู้
@@ -188,6 +170,7 @@ export default function HomeCg({ navigation }) {
                     bg="#EBF3FE"
                     rounded="30"
                     p={4}
+                    onPress={() => navigation.navigate("ShowPickRe")}
                   />
                   <Text color="#35609C" fontFamily="Regular" fontSize="12">
                     เบิกอุปกรณ์
@@ -206,6 +189,7 @@ export default function HomeCg({ navigation }) {
                     bg="#EBF3FE"
                     rounded="30"
                     p={4}
+                    onPress={() => navigation.navigate("Report")}
                   />
                   <Text color="#35609C" fontFamily="Regular" fontSize="12">
                     แจ้งปัญหา
@@ -213,47 +197,59 @@ export default function HomeCg({ navigation }) {
                 </VStack>
               </HStack>
             </Box>
-            <Box ml="6">
-              <Text
-                fontSize="15"
-                fontFamily="Medium"
-                style={{ color: "#35609C" }}
-                marginBottom={3}
-              >
-                แนะนำ
-              </Text>
-
-              <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={Video}
-                renderItem={({ item }) => (
-                  <Box
-                    marginBottom={2}
-                    borderWidth="1"
-                    rounded="20"
-                    borderColor="#DDDFE1"
-                    px={3}
-                    py={3}
-                    marginRight={4}
-                  >
-                    <HStack space={[3.5, 3]} justifyContent="space-between">
-                      <Image
-                        rounded="20"
-                        source={{
-                          uri: item.url,
-                        }}
-                        size="110"
-                        alt="home"
-                      />
-                      <Text color="#8AA7CF" fontFamily="Regular">
-                        {item.title}
+            <Box justifyContent="center" alignItems="center">
+              <HStack space={5}>
+                <Pressable
+                  w="40%"
+                  py="30 px"
+                  borderRadius={10}
+                  _pressed={{ bg: "coolGray.200" }}
+                  onPress={() => navigation.navigate("InOutScreen")}
+                  borderWidth={1.5}
+                  borderColor="#DDDFE1"
+                >
+                  <Box >
+                    <VStack justifyContent="center" alignItems="center">
+                      <Text
+                        fontFamily="Medium"
+                        fontSize="18 px"
+                        color="#35609C"
+                        marginBottom={5}
+                      >
+                        ลงชื่อเข้างาน
                       </Text>
-                    </HStack>
+
+                      <Icon as={Feather} name="user-check" size={33} color="#35609C"/>
+                    </VStack>
                   </Box>
-                )}
-                keyExtractor={(item) => item.id}
-              />
+                </Pressable>
+                <Pressable
+                  w="40%"
+                  py="30 px"
+                  borderRadius={10}
+                  _pressed={{ bg: "coolGray.200" }}
+                  onPress={() => navigation.navigate("EventDay")}
+                  borderWidth={1.5}
+                  borderColor="#DDDFE1"
+                >
+                  <Box>
+                    <VStack justifyContent="center" alignItems="center">
+                      <Text
+                        fontFamily="Medium"
+                        fontSize="18 px"
+                        color="#35609C"
+                        marginBottom={5}
+                      >
+                        กำหนดการ
+                      </Text>
+
+                      <Icon as={MaterialCommunityIcons} name="calendar-clock" size={33} color="#35609C"/>
+                    </VStack>
+                  </Box>
+                </Pressable>
+
+        
+              </HStack>
             </Box>
           </VStack>
         </ScrollView>
