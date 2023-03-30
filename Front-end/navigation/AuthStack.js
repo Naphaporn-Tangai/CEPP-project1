@@ -19,6 +19,7 @@ import ShowPickRe from "../screens/ShowPickRe";
 import PickUpDev from "../screens/PickUpDev";
 import Report from "../screens/Report";
 import Clip from "../screens/Clip";
+import MapCurrent from "../screens/MapCurrent";
 
 const Stack = createStackNavigator();
 
@@ -74,7 +75,7 @@ const AuthStack = () => {
         <Stack.Screen
         name="InOutScreen"
         component={InOutScreen}
-        options={{ title: "ลงชื่อเข้า-ออกงาน"  , headerTitleAlign:"center" }}
+        options={{ title: "ลงชื่อเข้า-ออกงาน"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
         <Stack.Screen 
         name="DrawerHome"
@@ -85,38 +86,43 @@ const AuthStack = () => {
           <Stack.Screen
         name="Article"
         component={Article}
-        options={{ title: "บทความ"  , headerTitleAlign:"center" }}
+        options={{ title: "บทความ"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
      
          <Stack.Screen
          name="EventDay"
          component={EventDay}
-         options={{ title: "กำหนดการ"  , headerTitleAlign:"center" }}
+         options={{ title: "กำหนดการ"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
          />
        <Stack.Screen
         name="ReturnDev"
         component={ReturnDev}
-        options={{ title: "คืนอุปกรณ์"  , headerTitleAlign:"center" }}
+        options={{ title: "คืนอุปกรณ์"  , headerTitleAlign:"center" , fontFamily: "Medium" }}
         />
         <Stack.Screen
         name="PickUpDev"
         component={PickUpDev}
-        options={{ title: "เบิกอุปกรณ์"  , headerTitleAlign:"center" }}
+        options={{ title: "เบิกอุปกรณ์"  , headerTitleAlign:"center" , fontFamily: "Medium" }}
         />
         <Stack.Screen
         name="ShowPickRe"
         component={ShowPickRe}
-        options={{ title: "เบิกอุปกรณ์"  , headerTitleAlign:"center" }}
+        options={{ title: "เบิกอุปกรณ์"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
            <Stack.Screen
         name="Report"
         component={Report}
-        options={{ title: "แจ้งปัญหา"  , headerTitleAlign:"center" }}
+        options={{ title: "แจ้งปัญหา"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
-            <Stack.Screen
+        <Stack.Screen
         name="Clip"
         component={Clip}
-        options={{ title: "แจ้งปัญหา"  , headerTitleAlign:"center" }}
+        options={{ title: "สื่อความรู้"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
+        />
+        <Stack.Screen
+        name="MapCurrent"
+        component={MapCurrent}
+        options={{ title: "สถานที่"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
       </Stack.Navigator>
 

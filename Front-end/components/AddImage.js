@@ -36,8 +36,8 @@ export default function AddImage() {
 
   return (
     <Box>
-      <Pressable paddingX={70} paddingY={2} onPress={takePhoto}>
-        <Box >
+      <Pressable  onPress={takePhoto} _pressed={{ bg: "coolGray.200" }}>
+        <Box paddingY={2} paddingX={70}>
           <HStack>
             <Icon
               as={<FontAwesome name="camera" />}

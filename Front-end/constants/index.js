@@ -1,4 +1,4 @@
 
-import { Video , UserCG  ,Date} from "./mocks";
+import { Video , UserCG  , UserPick } from "./mocks";
 import { COLORS } from "./theme";
-export {  Video , UserCG , Date , COLORS};
+export {  Video , UserCG , UserPick , COLORS};

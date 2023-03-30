@@ -12,7 +12,6 @@ import {
   FlatList,
   Spacer,
   Button,
-  ScrollView,
   Image,
   View,
   Pressable
@@ -27,7 +26,8 @@ import {
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import { Video, Date, COLORS } from "../constants";
 import { PagerView } from "react-native-pager-view";
-import { ProfileNav } from "../components";
+import { ListDate, ProfileNav } from "../components";
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeCg({ navigation }) {
   return (
@@ -37,49 +37,13 @@ export default function HomeCg({ navigation }) {
       bgColor="#fff"
     >
       <Center flex={1}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} >
           <VStack>
             <ProfileNav />
-            <Box ml="6">
-              <Text fontSize="15" fontFamily="Medium" color="#000">
-                4 ตุลาคม 2565
-              </Text>
-
-              <FlatList
-                data={Date}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                renderItem={({ item }) => (
-                  <Box
-                    justifyContent="center"
-                    marginBottom={5}
-                    borderWidth="1"
-                    w="63"
-                    h="84"
-                    rounded="25"
-                    borderColor="#DDDFE1"
-                    marginRight={3}
-                  >
-                    <HStack justifyContent="center">
-                      <VStack
-                        space={2.5}
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Text color="#8AA7CF" fontFamily="Regular">
-                          {item.date}
-                        </Text>
-                        <Text color="#35609C" fontFamily="Medium">
-                          {item.numDate}
-                        </Text>
-                      </VStack>
-                    </HStack>
-                  </Box>
-                )}
-                keyExtractor={(item) => item.id}
-              />
+            <Box marginTop={55}>
+            <ListDate/>
             </Box>
-            <Box bg="#35609C" p="5" rounded="xl" marginBottom={5} mx="6">
+            <Box bg="#35609C" p="5" rounded="xl" marginBottom={5} mx="6" marginTop={9}>
               <HStack justifyContent="space-between" alignItems="center">
                 <VStack>
                   <Text fontSize="md" fontFamily="Regular" color="#fff">
@@ -252,7 +216,7 @@ export default function HomeCg({ navigation }) {
               </HStack>
             </Box>
           </VStack>
-        </ScrollView>
+      </ScrollView>
       </Center>
     </View>
   );

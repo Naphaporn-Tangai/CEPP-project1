@@ -26,7 +26,7 @@ export default function EditProfile() {
       safeAreaTop
     >
       <Center flex={1}>
-        <Pressable onPress={pickImage} overflow="hidden">
+        <Pressable onPress={pickImage} overflow="hidden" _pressed={{ bg: "coolGray.200" }}>
           <Box>
             {imageUri ? (
               <Image

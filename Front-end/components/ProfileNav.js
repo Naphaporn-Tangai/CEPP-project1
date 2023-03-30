@@ -13,7 +13,7 @@ import { Feather } from "@expo/vector-icons";
 export default function HomeCg() {
 
     return (
-        <Box justifyContent='center' marginBottom={3} mx="6" safeAreaTop flex={1}>
+        <Box mx="6" top="5%" flex={1}>
 
             <HStack justifyContent="space-between" alignItems="center" >
                 <Avatar bg="green.500" mr="2" source={{
@@ -30,7 +30,7 @@ export default function HomeCg() {
                     </Text>
                 </VStack>
                 <Spacer />
-                <HStack alignItems='flex-end'>
+                <HStack >
                     <IconButton icon={<Icon as={Feather} name="bar-chart-2" size="7" color="#B5B9BC" />} />
                 </HStack>
             </HStack>

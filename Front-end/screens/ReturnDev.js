@@ -67,6 +67,7 @@ export default function ReturnDev({ navigation }) {
                   fontSize="17 px"
                   color="#35609C"
                   marginRight="40%"
+                  
                 >
                   อุปกรณ์ที่ยืม
                 </Text>
@@ -79,7 +80,7 @@ export default function ReturnDev({ navigation }) {
                   alignItems="center"
                   bg="#35609C"
                 >
-                  <Text fontSize={20} style={{ color: "#fff" }} w={8} h={8}>
+                  <Text fontSize={20} color="#fff" w={8} h={8}>
                     -
                   </Text>
                 </Button>
@@ -93,7 +94,7 @@ export default function ReturnDev({ navigation }) {
                 />
 
                 <Button onPress={incrementQuantity} w={8} h={8} bg="#35609C">
-                  <Text fontSize={20} style={{ color: "#fff" }} w={8} h={8}>
+                  <Text fontSize={20} color="#fff" w={8} h={8}>
                     +
                   </Text>
                 </Button>
