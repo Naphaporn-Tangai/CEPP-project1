@@ -1,48 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet } from 'react-native';
-import MapView, { Marker } from 'react-native-maps'
-import {
-  Text,
-  View,
-} from "native-base";
-import * as Location from 'expo-location';
+import MapView, { Marker } from 'react-native-maps';
+
+const GOOGLE_MAPS_APIKEY = 'AIzaSyDh2INnXDJTTgeX7MLqTcTaplQ4xuR9w2w';
 
 export default function MapCurrent() {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-
-      let currentLocation = await Location.getCurrentPositionAsync({});
-      setLocation(currentLocation.coords);
-    })();
+    navigator.geolocation.watchPosition(
+      (position) => {
+        setLocation(position.coords);
+      },
+      (error) => {
+        console.log(error);
+      },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
   }, []);
+
   return (
-    <View style={{ flex: 1}}>
-    {location && (
-      <MapView
-        style={{ flex: 1}}
-        initialRegion={{
-          latitude: location.latitude,
-          longitude: location.longitude,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      >
+    <MapView
+      style={{ flex: 1 }}
+      region={{
+        latitude: location ? location.latitude : 37.78825,
+        longitude: location ? location.longitude : -122.4324,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+      }}
+      showsUserLocation={true}
+      followsUserLocation={true}
+      zoomControlEnabled={true}
+      minZoomLevel={15}
+      maxZoomLevel={20}
+      loadingEnabled={true}
+      loadingIndicatorColor="#666666"
+      loadingBackgroundColor="#eeeeee"
+      provider="google"
+      customMapStyle={[]}
+      customMapStyleName=""
+      mapType="standard"
+      showsMyLocationButton={false}
+      toolbarEnabled={false}
+    >
+      {location && (
         <Marker
           coordinate={{
             latitude: location.latitude,
             longitude: location.longitude,
           }}
-          title="My Location"
-          description="This is my current location"
+          title="You are here"
         />
-      </MapView>
-    )}
-  </View>
-  )
+      )}
+    </MapView>
+  );
 }

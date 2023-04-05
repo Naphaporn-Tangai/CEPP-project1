@@ -1,4 +1,4 @@
-import { Actionsheet, useDisclose, Box , Input , HStack ,Icon , Text ,VStack , Pressable} from "native-base";
+import { Actionsheet, useDisclose, Box , Input , HStack ,Icon , Text ,VStack , Pressable , Modal , Button} from "native-base";
 
 import { FontAwesome5 ,MaterialCommunityIcons} from "@expo/vector-icons";
 import React ,{ useState }from 'react'
