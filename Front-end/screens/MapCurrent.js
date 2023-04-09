@@ -1,56 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
+import { StyleSheet } from 'react-native';
+import { Button, View } from "native-base";
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyDh2INnXDJTTgeX7MLqTcTaplQ4xuR9w2w';
+import * as Location from 'expo-location';
 
-export default function MapCurrent() {
+export default function MapCurrent({ navigation }) {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
-    navigator.geolocation.watchPosition(
-      (position) => {
-        setLocation(position.coords);
-      },
-      (error) => {
-        console.log(error);
-      },
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-    );
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Permission to access location was denied');
+        return;
+      }
+
+      let currentLocation = await Location.getCurrentPositionAsync({});
+      setLocation(currentLocation);
+    })();
   }, []);
 
+  const handleSaveLocation = () => {
+    navigation.navigate('Addlocation', { location: location });
+  }
+
   return (
-    <MapView
-      style={{ flex: 1 }}
-      region={{
-        latitude: location ? location.latitude : 37.78825,
-        longitude: location ? location.longitude : -122.4324,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      }}
-      showsUserLocation={true}
-      followsUserLocation={true}
-      zoomControlEnabled={true}
-      minZoomLevel={15}
-      maxZoomLevel={20}
-      loadingEnabled={true}
-      loadingIndicatorColor="#666666"
-      loadingBackgroundColor="#eeeeee"
-      provider="google"
-      customMapStyle={[]}
-      customMapStyleName=""
-      mapType="standard"
-      showsMyLocationButton={false}
-      toolbarEnabled={false}
-    >
+    <View style={styles.container}>
       {location && (
-        <Marker
-          coordinate={{
-            latitude: location.latitude,
-            longitude: location.longitude,
+        <MapView style={styles.map}
+          initialRegion={{
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
           }}
-          title="You are here"
-        />
+        >
+          <Marker coordinate={{latitude: location.coords.latitude, longitude: location.coords.longitude}} />
+        </MapView>
       )}
-    </MapView>
+      <Button
+        size="md"
+        borderRadius={10}
+        backgroundColor="#35609C"
+        _text={{
+          color: "#FFFF",
+          fontFamily: "Medium",
+          fontSize: "md",
+        }}
+        _pressed={{
+          bg: "#8AA7CF",
+          _text: { color: "#35609C" },
+        }}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          marginBottom: 60,
+          marginHorizontal: 45,
+        }}
+        onPress={handleSaveLocation}
+      >
+        บันทึก
+      </Button>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  map: {
+    width: '100%',
+    height: '100%',
+  },
+});

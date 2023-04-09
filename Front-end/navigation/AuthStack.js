@@ -20,6 +20,7 @@ import PickUpDev from "../screens/PickUpDev";
 import Report from "../screens/Report";
 import Clip from "../screens/Clip";
 import MapCurrent from "../screens/MapCurrent";
+import { Addlocation } from "../components";
 
 const Stack = createStackNavigator();
 
@@ -124,6 +125,7 @@ const AuthStack = () => {
         component={MapCurrent}
         options={{ title: "สถานที่"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
+ 
       </Stack.Navigator>
 
       
