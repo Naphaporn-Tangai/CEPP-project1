@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import SchNewCg from '../screens/SchNewCg';
+import SchNewCg from '../screens/cg/SchNewCg';
 import { HeaderBackButton } from '@react-navigation/elements';
 
 const Stack = createStackNavigator();

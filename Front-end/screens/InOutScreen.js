@@ -28,7 +28,7 @@ export default function InOutScreen({ navigation }) {
     >
       <Center flex={1}>
         <Box flex={1} top="5%">
-          <HStack space={3} mx={10} mb={3}>
+          <HStack space={3} mx={50} mb={3}>
             <Button
               
               onPress={() => handleOptionSelect('option1')}
@@ -54,12 +54,14 @@ export default function InOutScreen({ navigation }) {
               </Text>
             </Button>
           </HStack>
-
-          <VStack right={30} mb={3}>
+          <VStack  mb={3} >
+          <Box flex={1} >
+          
             <Addlocation />
             <AddImage />
+         
+          </Box> 
           </VStack>
-
           <Button
     size="md"
     borderRadius={10}

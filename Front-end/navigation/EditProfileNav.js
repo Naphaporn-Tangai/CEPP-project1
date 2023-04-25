@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import EditProfile from '../screens/EditProfile';
+import EditProfile from '../screens/user/EditProfile';
 import { HeaderBackButton } from '@react-navigation/elements';
 
 const Stack = createStackNavigator();

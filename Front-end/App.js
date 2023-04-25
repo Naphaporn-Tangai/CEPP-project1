@@ -4,7 +4,7 @@ import AuthStack from './navigation/AuthStack'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import * as Font from 'expo-font';
-import SchNewCg from './screens/SchNewCg';
+
 
 
 let customFonts = {

@@ -14,23 +14,23 @@ import {
   Button,
   IconButton
 } from "native-base";
-import { AddTittle } from "../components";
-import { AddImage } from "../components";
+import { AddTittle } from "../../components";
+import { AddImage } from "../../components";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-import { COLORS } from "../constants";
-import { Addlocation } from "../components";
+import { COLORS } from "../../constants";
+import { Addlocation } from "../../components";
 
-import { AddColors } from "../components";
-import { AddDate } from "../components";
-import { AddTime } from "../components";
-import { AddSwitch } from "../components";
-import { Elderly } from "../components";
-import { GropElderly } from "../components";
-import { Issues } from "../components";
-import { DateChoose } from "../components";
-import { DateRe } from "../components"
-import { DatePick } from "../components"
+import { AddColors } from "../../components";
+import { AddDate } from "../../components";
+import { AddTime } from "../../components";
+import { AddSwitch } from "../../components";
+import { Elderly } from "../../components";
+import { GropElderly } from "../../components";
+import { Issues } from "../../components";
+import { DateChoose } from "../../components";
+import { DateRe } from "../../components"
+import { DatePick } from "../../components"
 
 export default function PickUpDev({ navigation }) {
   

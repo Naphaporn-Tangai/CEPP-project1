@@ -1,25 +1,28 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login from "../screens/Login";
-import Register from "../screens/Register"
-import Forgot from "../screens/Forgot"
-import ResetPass from "../screens/ResetPass"
+import Login from "../screens/user/Login";
+import Register from "../screens/user/Register"
+import Forgot from "../screens/user/Forgot"
+import ResetPass from "../screens/user/ResetPass"
 
-import ConfirmReset from "../screens/ConfirmReset"
+import ConfirmReset from "../screens/user/ConfirmReset"
 import InOutScreen from '../screens/InOutScreen';
 
 import BottomTapCM from "./BottomTapCM";
 import BottomTapCG from './BottomTapCG'
 import CmCgScreen from '../screens/CmCgScreen';
 import DrawerHome from "./DrawerHome";
-import ReturnDev from "../screens/ReturnDev";
-import Article from "../screens/Article";
+import ReturnDev from "../screens/equipment/ReturnDev";
 import EventDay from "../screens/EventDay";
-import ShowPickRe from "../screens/ShowPickRe";
-import PickUpDev from "../screens/PickUpDev";
+import ShowPickRe from "../screens/equipment/ShowPickRe";
+import PickUpDev from "../screens/equipment/PickUpDev";
 import Report from "../screens/Report";
-import Clip from "../screens/Clip";
-import MapCurrent from "../screens/MapCurrent";
+import Clip from "../screens/videoScreen/Clip";
+import MapCurrent from "../screens/map/MapCurrent";
+import VideoScreen from "../screens/videoScreen/VideoScreen"
+import Signature from "../screens/Signature";
+import SeleteEvent from "../screens/SeleteEvent";
+import MapSch from "../screens/map/MapSch"
 import { Addlocation } from "../components";
 
 const Stack = createStackNavigator();
@@ -84,11 +87,7 @@ const AuthStack = () => {
        
         />
         
-          <Stack.Screen
-        name="Article"
-        component={Article}
-        options={{ title: "บทความ"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
-        />
+  
      
          <Stack.Screen
          name="EventDay"
@@ -120,13 +119,32 @@ const AuthStack = () => {
         component={Clip}
         options={{ title: "สื่อความรู้"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
-        <Stack.Screen
+         <Stack.Screen
         name="MapCurrent"
         component={MapCurrent}
         options={{ title: "สถานที่"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
-        />
- 
-      </Stack.Navigator>
+      />
+      <Stack.Screen
+        name="MapSch"
+        component={MapSch}
+        options={{ title: "สถานที่"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
+      />
+        <Stack.Screen
+        name="Video"
+        component={VideoScreen}
+        options={{ title: "วิดีโอ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+      <Stack.Screen
+        name="Signature"
+        component={Signature}
+        options={{ title: "เซ็นชื่อ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+         <Stack.Screen
+        name="SeleteEvent"
+        component={SeleteEvent}
+        options={{ title: "เซ็นชื่อ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+            </Stack.Navigator>
 
       
   );

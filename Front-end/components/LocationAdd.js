@@ -21,7 +21,7 @@ console.log(address);
       <Pressable
         paddingY={2}
         _pressed={{ bg: 'coolGray.200' }}
-        onPress={() => navigation.navigate('MapCurrent')}
+        onPress={() => navigation.navigate('MapSch')}
         
       >
         <Box paddingX={70}>
@@ -33,7 +33,7 @@ console.log(address);
               marginRight={5}
             />
             {address ? ( // ถ้ามี address แล้ว
-              <Pressable onPress={() => navigation.navigate('MapCurrent')}>          
+              <Pressable onPress={() => navigation.navigate('MapSch')} pr={5}>          
                 <Text fontFamily="Regular" fontSize="17 px" color="#000">
                 {address}
                 </Text>

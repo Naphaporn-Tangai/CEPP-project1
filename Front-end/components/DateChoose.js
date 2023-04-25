@@ -25,7 +25,7 @@ export default function DateChoose() {
     }
   };
   return (
-    <Box mb={5} paddingX={50}>
+    <Box mb={3} paddingX={50}>
       <Text
         fontSize="md"
         fontFamily="Medium"

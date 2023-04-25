@@ -14,7 +14,8 @@ import DateRe from './DateRe';
 import DatePick from './DatePick';
 import ListDate from './ListDate';
 import SeachBar from './SeachBar';
+import LocationAdd from './LocationAdd'
 export {
     ProfileNav,Addlocation,AddImage,AddTittle,AddColors,AddDate,
-    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,DateRe,DatePick,ListDate,SeachBar
+    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,DateRe,DatePick,ListDate,SeachBar,LocationAdd
 };

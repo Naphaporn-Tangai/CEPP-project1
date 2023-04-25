@@ -4,7 +4,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { COLORS } from '../constants';
 export default function AddTittle() {
   return (
-    <Box paddingX={70} mb={1}>
+    <Box paddingX={70} >
       
        <Input 
        w={{

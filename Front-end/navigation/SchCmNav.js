@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import SchNewCm from '../screens/SchNewCm';
+import SchNewCm from '../screens/cm/SchNewCm';
 import { HeaderBackButton } from '@react-navigation/elements';
 
 const Stack = createStackNavigator();

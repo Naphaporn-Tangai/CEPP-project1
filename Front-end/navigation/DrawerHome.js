@@ -1,8 +1,8 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Datum from '../screens/DatumCG';
+import Datum from '../screens/cg/DatumCG';
 import EditProfileNav from './EditProfileNav';
-import Login from '../screens/Login';
+import Login from '../screens/user/Login';
 import BottomTapCG from './BottomTapCG';
 
 const Drawer = createDrawerNavigator();

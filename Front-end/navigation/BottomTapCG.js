@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {useNavigation} from '@react-navigation/native';
-import HomeCg from '../screens/HomeCg';
+import HomeCg from '../screens/cg/HomeCg';
 import NotifyNav from './NotifyNav'
 import CalendarNav from './CalendarNav';
 

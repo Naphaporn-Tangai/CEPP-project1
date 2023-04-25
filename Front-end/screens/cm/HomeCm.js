@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Text, Avatar, Center, HStack, Box, VStack, IconButton, Icon, Badge, FlatList, Spacer, View,  Stack } from "native-base";
 import { Feather } from "@expo/vector-icons";
-import { UserCG } from "../constants";
-import { ListDate, ProfileNav } from "../components"
+import { UserCG } from "../../constants";
+import { ListDate, ProfileNav } from "../../components"
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeCm({ navigation }) {

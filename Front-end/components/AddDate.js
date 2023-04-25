@@ -83,7 +83,7 @@ export default function AddDate() {
   return (
     <Box >
       <Pressable  onPressIn={onOpen} _pressed={{ bg: "coolGray.200" }}>
-        <Box paddingY={2} paddingX={70}>
+        <Box paddingY={1} paddingX={70}>
           <HStack>
             <Icon
               as={<FontAwesome5 name="calendar-alt" />}

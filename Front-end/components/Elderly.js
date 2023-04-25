@@ -31,7 +31,7 @@ export default function Elderly() {
         onClose
       } = useDisclose();
   return (
-    <Box mb={2}>
+    <Box >
       <Pressable
               paddingX={70}
               paddingY={2}

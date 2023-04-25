@@ -8,8 +8,12 @@ import {
   View,
   Text,
   Pressable,
+  IconButton,
+  Icon,
+  Spacer,
 } from "native-base";
 import { ScrollView } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
 
 export default function ListDate() {
   const monthNames = [
@@ -68,12 +72,31 @@ export default function ListDate() {
   return (
     <Box flex={1}>
       <VStack>
-        <Text fontSize="17" fontFamily="Medium" color="#000" ml="9">
-          {formattedDate}
-        </Text>
+        <HStack justifyContent="space-between" alignItems="center">
+          <Text fontSize="17" fontFamily="Medium" color="#000" ml="9">
+            {formattedDate}
+          </Text>
+          <Spacer />
+          <HStack mr="6">
+            <IconButton
+              icon={
+                <Icon
+                  as={Feather}
+                  name="bar-chart-2"
+                  size="7"
+                  color="#B5B9BC"
+                />
+              }
+            />
+          </HStack>
+        </HStack>
 
         <HStack ml="6" top="3%">
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            removeClippedSubviews={true}
+          >
             {weekDates.map((item, index) => (
               <Pressable
                 key={item.id}
@@ -120,6 +143,7 @@ export default function ListDate() {
           </ScrollView>
         </HStack>
       </VStack>
+   
     </Box>
   );
 }

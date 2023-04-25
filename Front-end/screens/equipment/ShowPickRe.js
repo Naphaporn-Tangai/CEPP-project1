@@ -8,11 +8,12 @@ import {
   Box,
   Avatar,
   Text,
-  Spacer
+  Spacer,
+  Pressable
 } from "native-base";
-import { Addlocation } from "../components";
-import { AddImage } from "../components";
-import { UserPick } from "../constants";
+import { Addlocation } from "../../components";
+import { AddImage } from "../../components";
+import { UserPick } from "../../constants";
 
 export default function ShowPickRe({ navigation }) {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -61,20 +62,20 @@ export default function ShowPickRe({ navigation }) {
           </HStack>
           <Box marginTop={2}>
                 {UserPick.map((item) => (
-                  <Box key={item.id} marginBottom={2} borderWidth="1" rounded="xl" borderColor="#DDDFE1" pl={["4", "4"]} pr={["0", "5"]} py="3">
+                  <Pressable key={item.id} _pressed={{ bg: "coolGray.200" }} marginBottom={2} borderWidth="1" rounded="xl" borderColor="#DDDFE1" pl={["4", "4"]} pr={["0", "5"]} py="3">
                     <HStack space={[3.5, 3]} justifyContent="space-between">
                       <Avatar size="48px" source={{ uri: item.avatarUrl }} />
                       <VStack>
                         <Text color="#35609C" fontFamily='Medium'>
-                          {item.fullName}
+                        {item.tool}
                         </Text>
                         <Text color="#8AA7CF" fontFamily='Regular'>
-                          {item.tool}
+                          {item.date}
                         </Text>
                       </VStack>
                       <Spacer />
                     </HStack>
-                  </Box>
+                  </Pressable>
                 ))}
               </Box>
         </Box>

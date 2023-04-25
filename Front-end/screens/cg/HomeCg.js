@@ -24,9 +24,9 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
-import { Video, Date, COLORS } from "../constants";
+import { Video, Date, COLORS } from "../../constants";
 import { PagerView } from "react-native-pager-view";
-import { ListDate, ProfileNav } from "../components";
+import { ListDate, ProfileNav } from "../../components";
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeCg({ navigation }) {
@@ -86,18 +86,18 @@ export default function HomeCg({ navigation }) {
                     icon={
                       <Icon
                         size="19"
-                        as={Ionicons}
-                        name="bookmark"
+                        as={FontAwesome5}
+                        name="file-signature"
                         color="#35609C"
                       />
                     }
                     bg="#EBF3FE"
                     rounded="30"
                     p={4}
-                    onPress={() => navigation.navigate("Article")}
+                    onPress={() => navigation.navigate("Signature")}
                   />
                   <Text color="#35609C" fontFamily="Regular" fontSize="12">
-                    บทความ
+                    เซ็นชื่อ
                   </Text>
                 </VStack>
                 <VStack justifyContent="center" alignItems="center" space={1}>

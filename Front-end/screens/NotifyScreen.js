@@ -49,10 +49,9 @@ export default function NotifyScreen() {
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-       
       bgColor="#ffff"
     >
-      <Center flex={1}  top="5%">
+      <Center flex={1} top="3%">
         <ScrollView showsVerticalScrollIndicator={false}>
           <VStack>
             <Box >
@@ -68,49 +67,49 @@ export default function NotifyScreen() {
               >
                 วันนี้
               </Text>
-              <FlatList
-                data={data}
-                marginTop={2}
-                renderItem={({ item }) => (
-                  <Box
-                    marginBottom={2}
-                    marginRight={10}
-                    rounded="xl"
-                    pl={["4", "4"]}
-                    pr={["0", "5"]}
-                    py="3"
-                  >
-                    <HStack space={[3.5, 3]} justifyContent="space-between">
-                      <Avatar
-                        size="48px"
-                        source={{
-                          uri: item.avatarUrl,
-                        }}
-                      />
-                      <VStack>
-                        <Text color="#35609C" fontFamily="Medium" paddingRight={20}>
-                          {item.tittle}
-                        </Text>
-                        <Text color="#8AA7CF" fontFamily="Regular">
-                          {item.recentText}
-                        </Text>
-                      </VStack>
-                      <Spacer />
+              {data.map((item) => (
+                <Box
+                  marginBottom={2}
+                  marginRight={10}
+                  rounded="xl"
+                  pl={["4", "4"]}
+                  pr={["0", "5"]}
+                  py="3"
+                  key={item.id} // ใส่ key ด้วยเพื่อให้ React แยกแต่ละ element ใน List
+                >
+                  <HStack space={[3.5, 3]} justifyContent="space-between">
+                    <Avatar
+                      size="48px"
+                      source={{
+                        uri: item.avatarUrl,
+                      }}
+                    />
+                    <VStack>
                       <Text
-                        fontSize="xs"
-                        _dark={{
-                          color: "warmGray.50",
-                        }}
-                        color="coolGray.800"
-                        alignSelf="flex-start"
+                        color="#35609C"
+                        fontFamily="Medium"
+                        paddingRight={45}
                       >
-                        {item.timeStamp}
+                        {item.tittle}
                       </Text>
-                    </HStack>
-                  </Box>
-                )}
-                keyExtractor={(item) => item.id}
-              />
+                      <Text color="#8AA7CF" fontFamily="Regular">
+                        {item.recentText}
+                      </Text>
+                    </VStack>
+                    <Spacer />
+                    <Text
+                      fontSize="xs"
+                      _dark={{
+                        color: "warmGray.50",
+                      }}
+                      color="coolGray.800"
+                      alignSelf="flex-start"
+                    >
+                      {item.timeStamp}
+                    </Text>
+                  </HStack>
+                </Box>
+              ))}
             </Box>
           </VStack>
         </ScrollView>

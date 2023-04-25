@@ -30,7 +30,7 @@ export default function GropElderly() {
         onClose
       } = useDisclose();
   return (
-    <Box mb={2}>
+    <Box >
       <Pressable
               paddingX={70}
               paddingY={2}

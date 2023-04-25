@@ -32,9 +32,13 @@
         "googleMaps": { "apiKey": "AIzaSyABpqLRzPKAgoHoap76kOEoq09Dcq3XZpA" } 
       }
     },
+    "googleServices": {
+      "apiKey": "AIzaSyCMrKkp1wIP5MsRGcosTnzs_FL62PoaWLs"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+   
     "plugins": [
       [
         "expo-location",

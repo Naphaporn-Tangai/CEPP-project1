@@ -44,21 +44,21 @@ export default function AddImage() {
               size="md"
               color={COLORS.primary}
               marginRight={4}
-            />
-            <Text fontFamily="Regular" fontSize="17 px" color="#35609C">
-              {imageUri ? (
-                <Box>
-                <Image
+            />        
+            {imageUri ? (
+              <Image
                   source={{ uri: imageUri }}
-                  style={{ width: 300, height: 150 }}
+                  style={{ width: 270, height: 150  }}
                   alt="Selected Image"
-                  marginTop={130}
+                   
                 />
-                </Box>
-              ) : (
-                "เพิ่มรูปภาพ"
+             ) : (
+             <Text fontFamily="Regular" fontSize="17 px" color="#35609C">
+              เพิ่มรูปภาพ
+              </Text>
               )}
-            </Text>
+              
+              
           </HStack>
         </Box>
       </Pressable>

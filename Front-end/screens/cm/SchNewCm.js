@@ -1,14 +1,14 @@
 import { Actionsheet, useDisclose, Box , Input , HStack ,Icon , Text ,VStack, Spacer ,Switch ,View , Center} from "native-base";
 import React from 'react'
 import { Ionicons , FontAwesome ,FontAwesome5 ,MaterialCommunityIcons ,Entypo} from "@expo/vector-icons";
-import { COLORS } from '../constants';
-import { Addlocation } from "../components"
-import { AddTittle } from "../components"
-import { AddColors } from "../components"
-import { AddDate } from "../components"
-import { AddTime } from "../components"
-import { AddSwitch } from "../components"
-import { DateChoose } from "../components";
+import { COLORS } from '../../constants';
+import { Addlocation } from "../../components"
+import { AddTittle } from "../../components"
+import { AddColors } from "../../components"
+import { AddDate } from "../../components"
+import { AddTime } from "../../components"
+import { AddSwitch } from "../../components"
+import { DateChoose } from "../../components";
 
 export default function SchNewCm({ navigation }) {
 

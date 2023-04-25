@@ -7,7 +7,7 @@ import { COLORS } from '../constants';
 export default function AddTime() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <Box paddingX={70} mb={1}>
+    <Box paddingX={70} >
        <HStack>
        <Pressable _pressed={{ bg: "coolGray.200" }}>
        <Box w={150} marginRight={5} paddingBottom={4} mt={2}>

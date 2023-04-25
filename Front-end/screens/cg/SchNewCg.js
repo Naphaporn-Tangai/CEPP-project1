@@ -22,17 +22,17 @@ import {
   Entypo,
   Feather,
 } from "@expo/vector-icons";
-import { COLORS } from "../constants";
-import { Addlocation } from "../components";
-import { AddTittle } from "../components";
-import { AddColors } from "../components";
-import { AddDate } from "../components";
-import { AddTime } from "../components";
-import { AddSwitch } from "../components";
-import { Elderly } from "../components";
-import { GropElderly } from "../components";
-import { Issues } from "../components";
-import { DateChoose } from "../components";
+import { COLORS } from "../../constants";
+import { LocationAdd } from "../../components";
+import { AddTittle } from "../../components";
+import { AddColors } from "../../components";
+import { AddDate } from "../../components";
+import { AddTime } from "../../components";
+import { AddSwitch } from "../../components";
+import { Elderly } from "../../components";
+import { GropElderly } from "../../components";
+import { Issues } from "../../components";
+import { DateChoose } from "../../components";
 
 export default function SchNewCg({ navigation }) {
   return (
@@ -45,7 +45,7 @@ export default function SchNewCg({ navigation }) {
         <Box flex={1} top="3%">
           <VStack>
             <AddTittle />
-            <Addlocation />
+            <LocationAdd />
             <AddDate />
             <AddTime />
             <DateChoose />
