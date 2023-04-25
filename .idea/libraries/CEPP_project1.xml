@@ -1,0 +1,40 @@
+<component name="libraryTable">
+  <library name="CEPP-project1">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/@react-native-masked-view/masked-view/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/expo-image-loader/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/expo-location/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/expo-modules-core/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/expo-structured-headers/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/expo-updates-interface/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/lottie-react-native/src/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-fast-image/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-gesture-handler/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-gesture-handler/android/src/paper/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-image-picker/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-maps/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/ReanimatedUIManager/70" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/ReanimatedUIManager/latest" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/messageQueueThread/67" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/messageQueueThread/latest" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/nativeHierarchyManager/62" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-reanimated/android/src/reactNativeVersionPatch/nativeHierarchyManager/latest" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-safe-area-context/android/src/paper/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-screens/android/src/paper/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-svg/android/src/fabric/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-svg/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-svg/android/src/paper/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-vector-icons/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-webview/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native-youtube/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native/ReactAndroid/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native/template/android/app/src/debug/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native/template/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Front-end/node_modules/react-native/template/android/app/src/release/java" />
+    </SOURCES>
+  </library>
+</component>
