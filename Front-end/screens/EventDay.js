@@ -90,7 +90,7 @@ export default function ListDate({ navigation }) {
             >
               {weekDates.map((item, index) => (
                 <Pressable
-                onPress={() => navigation.navigate('SeleteEvent')}
+                
                 _pressed={{ bg: 'coolGray.200' }}
                   key={item.id}
                   justifyContent="center"
@@ -193,6 +193,7 @@ export default function ListDate({ navigation }) {
               ml={7}
               borderRadius={30}
               mt={4}
+              onPress={() => navigation.navigate('SeleteEvent')}
             >
               <Spacer />
               <HStack>
