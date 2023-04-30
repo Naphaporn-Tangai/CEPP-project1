@@ -14,7 +14,7 @@ import {
 } from "native-base";
 import { ScrollView } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
-
+import { useNavigation } from '@react-navigation/native'
 export default function ListDate() {
   const monthNames = [
     "มกราคม",
@@ -68,7 +68,7 @@ export default function ListDate() {
   const handleDatePress = (date) => {
     setSelectedDate(date);
   };
-
+  const navigation = useNavigation();
   return (
     <Box flex={1}>
       <VStack>
@@ -79,6 +79,8 @@ export default function ListDate() {
           <Spacer />
           <HStack mr="6">
             <IconButton
+               onPress={() => navigation.navigate("DatumCG")}
+
               icon={
                 <Icon
                   as={Feather}

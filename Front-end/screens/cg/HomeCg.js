@@ -28,7 +28,7 @@ import { Video, Date, COLORS } from "../../constants";
 import { PagerView } from "react-native-pager-view";
 import { ListDate, ProfileNav } from "../../components";
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 export default function HomeCg({ navigation }) {
   return (
     <View
@@ -39,7 +39,36 @@ export default function HomeCg({ navigation }) {
       <Center flex={1}>
       <ScrollView showsVerticalScrollIndicator={false} >
           <VStack>
-            <ProfileNav />
+          <Box mx="6" top="5%" flex={1}>
+      <HStack justifyContent="space-between" alignItems="center">
+        <Avatar
+          bg="green.500"
+          mr="2"
+          source={{
+            uri: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+          }}
+        >
+          RS
+        </Avatar>
+        <VStack>
+          <Text style={{ fontFamily: "Medium", color: "#35609C" }}>
+            นายกันต์ มากทรัพย์สิน
+          </Text>
+          <Text style={{ fontFamily: "Regular", color: "#8AA7CF" }}>
+            Care manager
+          </Text>
+        </VStack>
+        <Spacer />
+        <HStack>
+          <IconButton
+            onPress={() => navigation.openDrawer()}
+            icon={
+              <Icon as={FontAwesome5} name="bars" size="5" color="#B5B9BC" />
+            }
+          />
+        </HStack>
+      </HStack>
+    </Box>
             <Box marginTop={55}>
             <ListDate/>
             </Box>

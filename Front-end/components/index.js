@@ -15,7 +15,8 @@ import DatePick from './DatePick';
 import ListDate from './ListDate';
 import SeachBar from './SeachBar';
 import LocationAdd from './LocationAdd'
+import AddVideo from './AddVideo';
 export {
     ProfileNav,Addlocation,AddImage,AddTittle,AddColors,AddDate,
-    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,DateRe,DatePick,ListDate,SeachBar,LocationAdd
+    AddSwitch,AddTime,Elderly,GropElderly,Issues,DateChoose,DateRe,DatePick,ListDate,SeachBar,LocationAdd,AddVideo
 };

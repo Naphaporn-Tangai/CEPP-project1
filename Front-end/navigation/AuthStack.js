@@ -1,4 +1,3 @@
-import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../screens/user/Login";
 import Register from "../screens/user/Register"
@@ -11,7 +10,7 @@ import InOutScreen from '../screens/InOutScreen';
 import BottomTapCM from "./BottomTapCM";
 import BottomTapCG from './BottomTapCG'
 import CmCgScreen from '../screens/CmCgScreen';
-import DrawerHome from "./DrawerHome";
+
 import ReturnDev from "../screens/equipment/ReturnDev";
 import EventDay from "../screens/EventDay";
 import ShowPickRe from "../screens/equipment/ShowPickRe";
@@ -23,6 +22,9 @@ import VideoScreen from "../screens/videoScreen/VideoScreen"
 import Signature from "../screens/Signature";
 import SeleteEvent from "../screens/SeleteEvent";
 import MapSch from "../screens/map/MapSch"
+import DatumCG from "../screens/cg/DatumCG"
+import MapEvent from "../screens/map/MapEvent"
+import WorkCG from "../screens/cm/WorkCG";
 import { Addlocation } from "../components";
 
 const Stack = createStackNavigator();
@@ -81,13 +83,6 @@ const AuthStack = () => {
         component={InOutScreen}
         options={{ title: "ลงชื่อเข้า-ออกงาน"  , headerTitleAlign:"center" , fontFamily: "Medium"}}
         />
-        <Stack.Screen 
-        name="DrawerHome"
-        component={DrawerHome}
-       
-        />
-        
-  
      
          <Stack.Screen
          name="EventDay"
@@ -142,8 +137,24 @@ const AuthStack = () => {
          <Stack.Screen
         name="SeleteEvent"
         component={SeleteEvent}
-        options={{ title: "เซ็นชื่อ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+        options={{ title: "กำหนดการ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
       />
+               <Stack.Screen
+        name="DatumCG"
+        component={DatumCG}
+        options={{ title: "สถิติ" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+                     <Stack.Screen
+        name="MapEvent"
+        component={MapEvent}
+        options={{ title: "สถานที่" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+                           <Stack.Screen
+        name="WorkCG"
+        component={WorkCG}
+        options={{ title: "การทำงานของ CG" , headerTitleAlign:"center" , fontFamily: "Medium" }}
+      />
+
             </Stack.Navigator>
 
       

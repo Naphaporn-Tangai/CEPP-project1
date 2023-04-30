@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import * as ImagePicker from "expo-image-picker";
 
-export default function EditProfile({ navigation }) {
+export default function EditProfileCm({ navigation }) {
   const [imageUri, setImageUri] = useState(null);
   const [show, setShow] = React.useState(false);
   const pickImage = async () => {
@@ -112,7 +112,7 @@ export default function EditProfile({ navigation }) {
             </FormControl.Label>
           <Select 
           variant="underlined"
-          defaultValue="giver"
+          defaultValue="manager"
           minWidth="270"  
           accessibilityLabel="position" 
           style={{ fontFamily: "Medium" , fontSize: 15 , paddingLeft: 20}}
@@ -139,7 +139,7 @@ export default function EditProfile({ navigation }) {
               bg: "#8AA7CF",
               _text: { color: "#35609C" },
             }}
-            onPress={() => navigation.navigate("BottomTapCG")} 
+            onPress={() => navigation.navigate("BottomTapCM")} 
             mt="10">
             บันทึก
           </Button>

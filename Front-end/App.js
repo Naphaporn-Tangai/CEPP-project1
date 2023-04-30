@@ -1,6 +1,7 @@
 import React from 'react';
 import { NativeBaseProvider } from "native-base";
-import AuthStack from './navigation/AuthStack'
+import DrawerHome from './navigation/DrawerHome'
+import DrawerCm from './navigation/DrawerCm'
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import * as Font from 'expo-font';
@@ -37,7 +38,8 @@ export default class App extends React.Component {
     return (
       <NativeBaseProvider>
         <NavigationContainer>
-             <AuthStack/>
+             <DrawerHome/>
+             
         </NavigationContainer>
       </NativeBaseProvider>
     );

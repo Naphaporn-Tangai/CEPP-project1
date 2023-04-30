@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import Signature from "react-native-signature-canvas";
-
-export default function SignatureScreen() {
+import {
+  Button,
+} from "native-base";
+export default function SignatureScreen({navigation}) {
   const [signature, setSign] = useState(null);
 
   const handleOK = (signature) => {
@@ -15,21 +17,25 @@ export default function SignatureScreen() {
   };
 
   const style = `.m-signature-pad--footer
-  .button.save {
-    background-color: #35609C;
-    color: #FFF;
-    font-size: 16px;
-    font-family: Medium ;
-    border-radius: 10px;
-  }`;
+  .m-signature-pad {
+    height: 200 px;
+    
+  }
+  .m-signature-pad--footer
+    .button {
+      background-color: #35609C;
+      color: #FFF;
+      
+    }
+`;
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 , alignItems: "center", justifyContent: "center"}}  backgroundColor="#fff" >
       <View style={styles.preview}>
         {signature ? (
           <Image
             resizeMode={"contain"}
-            style={{ width: 335, height: 300 }}
+            style={{ width: 335, height: 200 }}
             source={{ uri: signature }}
             
           />
@@ -38,20 +44,20 @@ export default function SignatureScreen() {
       <Signature
         onOK={handleOK}
         onEmpty={handleEmpty}
-        descriptionText="Sign"
+        descriptionText=""
         clearText="ล้าง"
         confirmText="เซ็นชื่อ"
         webStyle={style}
       />
-
+    <Button backgroundColor="#35609C"onPress={() => navigation.navigate('BottomTapCG')}>บันทึก</Button>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   preview: {
-
-    height: 114,
+    width: 400,
+    height: 100,
     backgroundColor: "#F8F8F8",
     justifyContent: "center",
     alignItems: "center",

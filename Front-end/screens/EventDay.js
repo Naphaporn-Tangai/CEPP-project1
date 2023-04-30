@@ -88,7 +88,7 @@ export default function ListDate({ navigation }) {
               showsHorizontalScrollIndicator={false}
               removeClippedSubviews={true}
             >
-              {weekDates.map((item, index) => (
+              {weekDates.map((item) => (
                 <Pressable
                 
                 _pressed={{ bg: 'coolGray.200' }}
@@ -163,7 +163,7 @@ export default function ListDate({ navigation }) {
           >
             กำหนดการวันนี้
           </Text>
-          {Event.map((item, index) => (
+          {Event.map((item) => (
           <HStack justifyContent="space-between" alignItems="center">
             <VStack >
               <Box backgroundColor="#D9D9D9" w={55} h={1} mb={3} />
@@ -174,7 +174,7 @@ export default function ListDate({ navigation }) {
               fontSize={15}
               mb={0.5}
             >
-             {item.date}
+             {item.timeEvent}
             </Text>
             <Text
               ml={10}

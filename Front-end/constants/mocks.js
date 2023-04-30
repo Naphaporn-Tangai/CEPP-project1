@@ -74,37 +74,70 @@ const UserCG = [{
     avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU",
    
 }];
+const WorkofCG = [{
+    id: "0",
+    cgName: "นางสาวสร้อย  ฟ้าใส",
+    goWork: "08:00",
+    backWork: "18:00",
+    SignatureElderly: "6:00"
+}, {
+    id: "1",
+    cgName: "นายทรัพย์  ทองมี",
+    goWork: "08:00",
+    backWork: "08:00",
+    SignatureElderly: "https://signaturely.com/wp-content/uploads/2020/04/unreadable-letters-signaturely.svg"
+}, {
+    id: "2",
+    cgName: "นายบัวขาว  อาจอง",
+    goWork: "08:00",
+    backWork: "17:00",
+    SignatureElderly: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/XXXTentacion_signature.svg/1206px-XXXTentacion_signature.svg.png"
+}, {
+    id: "3",
+    cgName: "นายบัวชมพู  อาจอ",
+    goWork: "08:00",
+    backWork: "18:00",
+    SignatureElderly: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Wonho-Signature.svg/2560px-Wonho-Signature.svg.png"
+    
+}, {
+    id: "4",
+    cgName: "เช็ดตัว",
+    goWork: "08:00",
+    backWork: "#35609C",
+    timeEvent: "13:00"
+    
+}];
 const Event = [{
     id: "0",
     title: "เข้าปฎิบัติงาน",
     num: "ครั้งเดียว",
     Bg: "#35609C",
-    date: "6:00"
+    timeEvent: "6:00"
 }, {
     id: "1",
     title: "วัดสัญญาณชีพ",
-    num: "ทุกวันและทุกสัปดาห์",
+    num: "08:00",
     Bg: "#8AA7CF",
-    date: "8:00"
+    timeEvent: "8:00"
 }, {
     id: "2",
     title: "ทำการกายภาพบำบัด",
     num: "ทุกวันและทุกสัปดาห์",
     Bg: "#7296C7",
-    date: "10:00"
+    timeEvent: "10:00"
 }, {
     id: "3",
     title: "ฝึกเดิน",
     num: "ทุกวันและทุกสัปดาห์",
     Bg: "#346CB6",
-    date: "11:00"
+    timeEvent: "11:00"
     
 }, {
     id: "4",
     title: "เช็ดตัว",
     num: "ทุกวันและทุกสัปดาห์",
     Bg: "#35609C",
-    date: "13:00"
+    timeEvent: "13:00"
     
 }];
 export { VideoClip ,UserCG ,UserPick ,Event};

@@ -6,7 +6,6 @@ import { addDays, format, startOfDay , endOfDay} from "date-fns";
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { backgroundColor } from 'react-native-calendars/src/style';
 
-
 LocaleConfig.locales.th = {
   monthNames: [
     'มกราคม',
