@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React, { useState , useEffect} from "react";
 import {
   Input,
   Icon,
@@ -11,12 +11,96 @@ import {
   HStack,
   Checkbox,
   View,
+  Toast,
+  Alert
 } from "native-base";
 import { MaterialIcons, Feather, FontAwesome } from "@expo/vector-icons";
 import axios from "axios";
 
+
 export default function Login({ navigation }) {
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleLogin = async () => {
+    if (username === '' || password === '') {
+      setErrorMessage('กรุณากรอกชื่อผู้ใช้และรหัสผ่าน');
+      Toast.show({
+        render: () => (
+          <Alert marginTop={10} status="info" variant="subtle" w="300">
+            <HStack>
+            <Alert.Icon />
+            <Text style={{   marginLeft: 10 }}>กรุณากรอกชื่อผู้ใช้และรหัสผ่าน</Text>
+            </HStack>
+          </Alert>
+        ),
+        duration: 1200,
+        placement: "top"
+        
+      });
+      return;
+    }
+    try {
+      const response = await axios.get('http://192.168.149.129:3000/users');
+
+      const users = response.data;
+
+      const matchedUser = users.find(
+        (user) => user.username === username && user.password === password
+      );
+
+      if (matchedUser) {
+        setErrorMessage('');
+        Toast.show({
+          render: () => (
+            <Alert marginTop={10} status="success" variant="solid" w="300">
+              <HStack>
+              <Alert.Icon />
+              <Text style={{ color: 'white' , marginLeft: 10 }}>เข้าสู่ระบบสำเร็จ</Text>
+              </HStack>
+            </Alert>
+          ),
+          duration: 1200,
+          placement: "top"
+          
+        });
+      navigation.navigate('CmCgScreen')
+      } else {
+        Toast.show({
+          render: () => (
+            <Alert marginTop={10} status="error" variant="subtle" w="300">
+              <HStack>
+              <Alert.Icon />
+              <Text style={{ color: '#FF0000' , marginLeft: 10 }}>เข้าสู่ระบบล้มเหลว</Text>
+              </HStack>
+            </Alert>
+          ),
+          duration: 1200,
+          placement: "top"
+          
+        });
+        setErrorMessage("อีเมลผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
+      
+      }
+    } catch (error) {
+      Toast.show({
+        render: () => (
+          <Alert marginTop={10} status="warning" variant="subtle" w="300">
+            <HStack>
+            <Alert.Icon />
+            <Text style={{   marginLeft: 10 }}>เกิดข้อผิดพลาด</Text>
+            </HStack>
+          </Alert>
+        ),
+        duration: 1200,
+        placement: "top"
+        
+      });
+      console.log("เกิดข้อผิดพลาด")
+    }
+  };
+
   const [show, setShow] = React.useState(false);
   return (
     <View
@@ -35,7 +119,7 @@ export default function Login({ navigation }) {
           >
             ลงชื่่อเข้าใช้
           </Text>
-
+          <FormControl isRequired isInvalid={errorMessage !== ''}>
           <Input
             w={{
               base: "65%",
@@ -55,8 +139,12 @@ export default function Login({ navigation }) {
             marginBottom="20 px"
             style={{ fontFamily: "Regular" }}
             _input={{ fontSize: 15 }}
-
+            value={username}
+            onChangeText={(text) => setUsername(text)}
           />
+
+          </FormControl>
+          <FormControl isRequired isInvalid={errorMessage !== ''}>
           <Input
             w={{
               base: "65%",
@@ -89,7 +177,11 @@ export default function Login({ navigation }) {
             variant="underlined"
             style={{ fontFamily: "Regular" }}
             _input={{ fontSize: 15 }}
+            value={password}
+            onChangeText={(text) => setPassword(text)}
           />
+           <FormControl.ErrorMessage>{errorMessage}</FormControl.ErrorMessage>
+          </FormControl>
           <Box alignItems="flex-end">
             <Link
               _text={{
@@ -122,7 +214,7 @@ export default function Login({ navigation }) {
               bg: "#8AA7CF",
               _text: { color: "#35609C" },
             }}
-            onPress={() => navigation.navigate("CmCgScreen")}
+            onPress={handleLogin}
           >
             เข้าสู่ระบบ
           </Button>
@@ -135,7 +227,6 @@ export default function Login({ navigation }) {
             _checked={{
               bg: "#8AA7CF",
               borderColor: "#8AA7CF",
-              
             }}
             defaultIsChecked
             _text={{
