@@ -12,24 +12,23 @@ import {
   Input,
   Icon,
   Pressable,
+  IconButton,
+  useToast,
 } from "native-base";
-import {
-  TextInput,
-} from "react-native";
+import { TextInput } from "react-native";
 import Axios from "axios";
 import { VideoClip } from "../../constants";
 import { ScrollView } from "react-native-gesture-handler";
 import { SeachBar } from "../../components";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import YoutubePlayer from "react-native-youtube-iframe";
 const YOUTUBE_API_KEY = "AIzaSyCMrKkp1wIP5MsRGcosTnzs_FL62PoaWLs";
-const videoIds = VideoClip.map((clip) => clip.idvideo);
-//const videoIds = ['VRh5OyhLvLQ', 'VRh5OyhLvLQ', 'Wx0WC-6s3h4', 'Wx0WC-6s3h4', 'Wx0WC-6s3h4'];
 
 export default function Clip({ navigation }) {
   const [thumbnails, setThumbnails] = useState([]);
   const [videoTitles, setVideoTitles] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const videoIds = VideoClip.map((clip) => clip.idvideo);
 
   useEffect(() => {
     Axios.get(
@@ -54,7 +53,7 @@ export default function Clip({ navigation }) {
   const handleSearchTextChange = (text) => {
     setSearchText(text); // อัพเดตค่า searchText ใน state
   };
-  
+
   const filteredThumbnails = thumbnails.filter(
     (thumbnail, index) =>
       videoTitles[index]?.toLowerCase()?.includes(searchText.toLowerCase()) // Added null check before calling toLowerCase()
@@ -62,9 +61,38 @@ export default function Clip({ navigation }) {
   const filteredVideoTitles = videoTitles.filter(
     (title) => title?.toLowerCase()?.includes(searchText.toLowerCase()) // Added null check before calling toLowerCase()
   );
-  
-  
+  const toast = useToast();
+  const [liked, setLiked] = React.useState(
+    Array(filteredThumbnails.length).fill(false)
+  );
 
+  const handleLike = (index) => {
+    if (index >= 0 && index < filteredThumbnails.length) {
+      const updatedLiked = [...liked];
+      updatedLiked[index] = !updatedLiked[index];
+      setLiked(updatedLiked);
+
+      const message = updatedLiked[index] ? "Liked" : "Unliked";
+    } else {
+      toast.show({ title: "Please select a valid item", status: "warning" });
+    }
+  };
+  const [likedtwo, setLikedtwo] = React.useState(
+    Array(filteredThumbnails.length).fill(false)
+  );
+
+  const handleLiketwo = (index) => {
+    if (index >= 0 && index < filteredThumbnails.length) {
+      const updatedLiked = [...likedtwo];
+      updatedLiked[index] = !updatedLiked[index];
+      setLikedtwo(updatedLiked);
+
+      const message = updatedLiked[index] ? "Liked" : "Unliked";
+    } else {
+      toast.show({ title: "Please select a valid item", status: "warning" });
+    }
+  };
+  
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -72,9 +100,9 @@ export default function Clip({ navigation }) {
     >
       <Box marginX={35} mt={5} mb={5}>
         <Input
-        onChangeText={handleSearchTextChange}
-        placeholder="ค้นหาชื่อคลิป"
-        placeholderTextColor="#B5B9BC"
+          onChangeText={handleSearchTextChange}
+          placeholder="ค้นหาชื่อคลิป"
+          placeholderTextColor="#B5B9BC"
           variant="filled"
           width="100%"
           py="1"
@@ -130,6 +158,21 @@ export default function Clip({ navigation }) {
                       >
                         {filteredVideoTitles[index]}
                       </Text>
+
+                      <IconButton
+                        onPress={() => handleLike(index)}
+                        icon={
+                          <FontAwesome
+                            name={liked[index] ? "heart" : "heart-o"}
+                            size={22}
+                            color={liked[index] ? "red" : "gray"}
+                          />
+                        }
+                        position="absolute"
+                        bottom={2}
+                        right={2}
+                      />
+                      
                     </Pressable>
                   ))}
                 </HStack>
@@ -162,12 +205,25 @@ export default function Clip({ navigation }) {
                       <Text
                         color="#35609C"
                         fontFamily="Medium"
-                        mt={12}
+                        mt={9}
                         ml={3}
                         pr={130}
                       >
                         {filteredVideoTitles[index]}
                       </Text>
+                      <IconButton
+                        onPress={() => handleLiketwo(index)}
+                        icon={
+                          <FontAwesome
+                            name={likedtwo[index] ? "heart" : "heart-o"}
+                            size={20}
+                            color={likedtwo[index] ? "red" : "gray"}
+                          />
+                        }
+                        position="absolute"
+                        bottom="15%"
+                        right="-1%"
+                      />
                     </HStack>
                   </Pressable>
                 ))}

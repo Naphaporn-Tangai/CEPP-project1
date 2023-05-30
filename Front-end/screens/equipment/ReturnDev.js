@@ -69,7 +69,7 @@ export default function ReturnDev({ navigation }) {
                   marginRight="40%"
                   
                 >
-                  อุปกรณ์ที่ยืม
+                  อุปกรณ์ที่คืน
                 </Text>
                 <Spacer />
                 <Button
@@ -80,7 +80,7 @@ export default function ReturnDev({ navigation }) {
                   alignItems="center"
                   bg="#35609C"
                 >
-                  <Text fontSize={20} color="#fff" w={8} h={8}>
+                  <Text fontSize={20} color="#fff" style={{ textAlign: "center" }} w={8} h={8}>
                     -
                   </Text>
                 </Button>
@@ -94,7 +94,7 @@ export default function ReturnDev({ navigation }) {
                 />
 
                 <Button onPress={incrementQuantity} w={8} h={8} bg="#35609C">
-                  <Text fontSize={20} color="#fff" w={8} h={8}>
+                  <Text fontSize={20} color="#fff"  style={{ textAlign: "center" }} w={8} h={8}>
                     +
                   </Text>
                 </Button>

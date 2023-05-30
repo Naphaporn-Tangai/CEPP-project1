@@ -23,12 +23,4 @@ npx expo start --tunnel  or npx expo start
 
 design UI nativebase [https://docs.nativebase.io/?utm_source=HomePage&utm_medium=header&utm_campaign=NativeBase_3](https://docs.nativebase.io)
 
-##  Back end
 
-รัน ``` node app.js ```
-
-[https://www.youtube.com/watch?v=xUQ-hNRHCgs](https://www.youtube.com/watch?v=xUQ-hNRHCgs)
-
-เข้าถึงไฟล์ก่อน  ``` cd filename ```
-
-และออกจากไฟล์ ``` cd .. ```

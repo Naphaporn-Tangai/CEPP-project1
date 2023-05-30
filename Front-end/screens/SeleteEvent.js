@@ -77,7 +77,7 @@ export default function SeleteEvent() {
   const [isOpen, setIsOpen] = useState(false); // สร้าง state ในการเก็บค่าเปิด/ปิด Actionsheet
 
   const onOpen = () => {
-    setIsOpen(false); // เปิด Actionsheet
+    setIsOpen(true); // เปิด Actionsheet
   };
 
   const onClose = () => {
@@ -198,10 +198,10 @@ export default function SeleteEvent() {
                 </Text>
               </HStack>
               <Text fontFamily="Regular" fontSize="17 px" color="#35609C">
-                ชื่อผู้สูงอายุ :
+                ประเด็นปัญหา :
               </Text>
               <Text fontFamily="Regular" fontSize="17 px" color="#000" >
-                นางสาริกา ดิ้นทอง
+                กลั้นปัสสาวะไม่ได้
               </Text>
             </Box>
 
@@ -242,9 +242,9 @@ export default function SeleteEvent() {
                 </Box>
 
                 <Actionsheet.Item onPress={() => {
-      navigation.navigate("MapEvent");
-      onClose(); // ปิด Actionsheet เมื่อเปลี่ยนหน้าไปยัง MapEvent
-    }}>
+      navigation.navigate("MapEvent");  
+      onClose();
+      }}>
 
                     <Box paddingLeft={10}>
                       <HStack>

@@ -72,7 +72,7 @@ export default function PickUpDev({ navigation }) {
                     bg="#35609C"
                    
                   >
-                    <Text fontSize={20} style={{ textAlign: "center" }}  w={8} h={8}>-</Text>
+                    <Text fontSize={20} color="#fff"  style={{ textAlign: "center" }} w={8} h={8}>-</Text>
                   </Button>
 
                   <Input
@@ -91,7 +91,7 @@ export default function PickUpDev({ navigation }) {
                     h={8}
                     bg="#35609C"
                   >
-                    <Text fontSize={20} style={{ textAlign: "center" }}  w={8} h={8}>+</Text>
+                    <Text fontSize={20} color="#fff"  style={{ textAlign: "center" }} w={8} h={8}>+</Text>
                   </Button>
                 </HStack>
               </Box>

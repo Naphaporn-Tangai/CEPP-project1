@@ -26,6 +26,7 @@ import {
 export default function WorkCG() {
   return (
     <View>
+   
         <Box           
         style={{
             shadowColor: "#000",
@@ -36,19 +37,18 @@ export default function WorkCG() {
             shadowOpacity: 0.3,
             shadowRadius: 4,
             elevation: 6,
-
-           
             height: 300,
             marginTop: 40,
             backgroundColor: "#fff",
             borderRadius: 40,
             marginHorizontal: 40,
-           alignItems: 'center', justifyContent: 'center'
+           alignItems: 'center', justifyContent: 'center',
+          height: 460
           }}>
                 <Text
               ml={10}
-              mt={7}
-              mb={5}
+              mt={3}
+              
               fontFamily="Medium"
               color="#35609C"
               fontSize={22}
@@ -99,6 +99,7 @@ export default function WorkCG() {
                     fontSize="17 px"
                     color="#35609C"
                     mb={3}
+                    mr={10}
                   >
                     หมู่บ้านเทพนคร 189 ถ. พุทธมณฑลสาย 2 ซ. 10 แขวง บางแคเหนือ
                     เขตบางแค กรุงเทพมหานคร 10160
@@ -109,7 +110,6 @@ export default function WorkCG() {
                 ชื่อผู้สูงอายุ :
               </Text>
               <Text fontFamily="Regular" fontSize="17 px" color="#000" mb={3}>
-                {" "}
                 นางสาริกา ดิ้นทอง
               </Text>
               <HStack>

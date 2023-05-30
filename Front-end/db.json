@@ -2,18 +2,38 @@
   "users": [
     {
       "id": 1,
+      "email": "user1",
+      "password": "123456789",
       "username": "user1",
-      "password": "123456789"
+      "phoneNum": "0999999999"
     },
     {
       "id": 2,
+      "email": "user2",
+      "password": "password2",
       "username": "user2",
-      "password": "password2"
+      "phoneNum": "0999999999"
     },
     {
       "id": 3,
+      "email": "user3",
+      "password": "password3",
       "username": "user3",
-      "password": "password3"
+      "phoneNum": "0999999999"
+    },
+    {
+      "username": "user",
+      "email": "test001@gmail.com",
+      "password": "123456789",
+      "phoneNum": "0923456789",
+      "id": 4
+    },
+    {
+      "username": "usertwo",
+      "email": "Test@gmail.com",
+      "password": "123456789",
+      "phoneNum": "092345678",
+      "id": 5
     }
   ]
 }

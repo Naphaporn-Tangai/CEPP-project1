@@ -29,6 +29,7 @@ import { PagerView } from "react-native-pager-view";
 import { ListDate, ProfileNav } from "../../components";
 import { ScrollView } from 'react-native-gesture-handler';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
+
 export default function HomeCg({ navigation }) {
   return (
     <View

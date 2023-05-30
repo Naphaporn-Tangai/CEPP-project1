@@ -19,12 +19,13 @@ import axios from "axios";
 
 
 export default function Login({ navigation }) {
-  const [username, setUsername] = useState('');
+  
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleLogin = async () => {
-    if (username === '' || password === '') {
+    if (email === '' || password === '') {
       setErrorMessage('กรุณากรอกชื่อผู้ใช้และรหัสผ่าน');
       Toast.show({
         render: () => (
@@ -47,7 +48,7 @@ export default function Login({ navigation }) {
       const users = response.data;
 
       const matchedUser = users.find(
-        (user) => user.username === username && user.password === password
+        (user) => user.email === email && user.password === password
       );
 
       if (matchedUser) {
@@ -139,8 +140,8 @@ export default function Login({ navigation }) {
             marginBottom="20 px"
             style={{ fontFamily: "Regular" }}
             _input={{ fontSize: 15 }}
-            value={username}
-            onChangeText={(text) => setUsername(text)}
+            value={email}
+            onChangeText={(text) => setEmail(text)}
           />
 
           </FormControl>

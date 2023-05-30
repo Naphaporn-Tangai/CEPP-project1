@@ -1,31 +1,61 @@
-import { Actionsheet, useDisclose, Box , Input , HStack ,Icon , Text ,VStack , Pressable , Modal , Button} from "native-base";
-import { FontAwesome5 ,MaterialCommunityIcons} from "@expo/vector-icons";
-import React ,{ useState }from 'react'
-import { COLORS } from '../constants';
+import {
+  Actionsheet,
+  useDisclose,
+  Box,
+  Input,
+  HStack,
+  Icon,
+  Text,
+  VStack,
+  Pressable,
+  Modal,
+  Button,
+} from "native-base";
+import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { COLORS } from "../constants";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment from "moment";
 
 export default function AddTime() {
-  const [showModal, setShowModal] = useState(false);
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setendTime] = useState(null);
+  const [isStartTimePickerVisible, setStartTimePickerVisible] = useState(false);
+  const [isEndTimePickerVisible, setEndTimePickerVisible] = useState(false);
+  const [selectedStartTime, setSelectedStartTime] = useState(null);
+  const [selectedEndTime, setSelectedEndTime] = useState(null);
 
-  const handleConfirmStartTime = (time) => {
-    setStartTime(moment(time).format("HH:mm"));
-    setShowModal(false);
+  const showStartTimePicker = () => {
+    setStartTimePickerVisible(true);
   };
-  const handleConfirmEndTime = (time) => {
-    setendTime(moment(time).format("HH:mm"));
-    setShowModal(false);
+
+  const hideStartTimePicker = () => {
+    setStartTimePickerVisible(false);
+  };
+
+  const handleStartTimeConfirm = (date) => {
+    setSelectedStartTime(date);
+    hideStartTimePicker();
+  };
+
+  const showEndTimePicker = () => {
+    setEndTimePickerVisible(true);
+  };
+
+  const hideEndTimePicker = () => {
+    setEndTimePickerVisible(false);
+  };
+
+  const handleEndTimeConfirm = (date) => {
+    setSelectedEndTime(date);
+    hideEndTimePicker();
   };
 
 
   return (
-    <Box paddingX={70} >
+    <Box paddingX={70}>
       <HStack>
         <Pressable
           _pressed={{ bg: "coolGray.200" }}
-          onPress={() => setShowModal(true)}
+          onPress={showStartTimePicker}
         >
           <Box w={150} marginRight={5} paddingBottom={4} mt={2}>
             <HStack>
@@ -35,14 +65,22 @@ export default function AddTime() {
                 color={COLORS.primary}
                 marginRight={5}
               />
-              <Text fontFamily="Regular" fontSize="17 px" color="#35609C">
-                {startTime ? startTime : "เวลาเริ่ม"}
-              </Text>
+        <Text fontFamily="Regular" fontSize="17px" color="#35609C">
+          {selectedStartTime ? selectedStartTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'เวลาเริ่ม'}
+        </Text>
             </HStack>
           </Box>
         </Pressable>
-
-        <Pressable onPress={() => setShowModal(true)}>
+        <DateTimePickerModal
+        isVisible={isStartTimePickerVisible}
+        mode="time"
+        display="spinner" 
+        dateFormat="hh:mm"
+        onConfirm={handleStartTimeConfirm}
+        onCancel={hideStartTimePicker}
+        />
+        
+        <Pressable onPress={showEndTimePicker}>
           <Box w={150} paddingBottom={4} mt={2}>
             <HStack>
               <Icon
@@ -51,27 +89,24 @@ export default function AddTime() {
                 color={COLORS.primary}
                 marginRight={5}
               />
-              <Text fontFamily="Regular" fontSize="17 px" color="#35609C">
-              {endTime ? endTime : "เวลาเริ่ม"}
-              </Text>
+        <Text fontFamily="Regular" fontSize="17px" color="#35609C">
+          {selectedEndTime ? selectedEndTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'เวลาสิ้นสุด'}
+        </Text>
             </HStack>
           </Box>
-        </Pressable>
-      </HStack>
+        </Pressable>    
 
-      {/* Time Picker Modal */}
-      <DateTimePickerModal
-        isVisible={showModal}
-        mode='time'
-        onConfirm={handleConfirmStartTime}
-        onCancel={() => setShowModal(false)}
-      />
-            <DateTimePickerModal
-        isVisible={showModal}
-        mode='time'
-        onConfirm={handleConfirmEndTime}
-        onCancel={() => setShowModal(false)}
-      />
+        <DateTimePickerModal
+        isVisible={isEndTimePickerVisible}
+        mode="time"
+        display="spinner" 
+        dateFormat="hh:mm"
+        onConfirm={handleEndTimeConfirm}
+        onCancel={hideEndTimePicker}
+              />
+    
+
+      </HStack>
     </Box>
   );
 }
