@@ -14,8 +14,9 @@ expo start --tunnel or expo start
 ```
 npx expo start --tunnel  or npx expo start
 ```
-
-
+```
+json-server --watch db.json --host 192.168.149.129
+```
 
 ตั้งค่า Android Emulator for React Native Expo [https://youtu.be/ZGIU5aIRi9M](https://youtu.be/ZGIU5aIRi9M)
 

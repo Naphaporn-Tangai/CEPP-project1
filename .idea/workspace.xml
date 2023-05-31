@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00f2de60-6bf8-4f5b-a834-c5b46cf9ccd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/components/AddVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/components/AddVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/components/ListDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/components/ListDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/components/ProfileNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/components/ProfileNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/constants/mocks.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/constants/mocks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/navigation/AuthStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/navigation/AuthStack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/navigation/DrawerHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/navigation/DrawerHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/screens/CalendarList.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/screens/CalendarList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/screens/EventDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/screens/EventDay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/screens/SeleteEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/screens/SeleteEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-end/screens/cg/DatumCG.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-end/screens/cg/DatumCG.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
